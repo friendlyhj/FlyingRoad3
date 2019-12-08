@@ -1,0 +1,28 @@
+{
+  "name": "mek5",
+  "target-item": "mekanismgenerators:reactorglass",
+  "target-meta": 0,
+  "target-count": 4,
+
+  "duration": 120,
+
+  "catalyst": "mekanism:reinforcedalloy",
+
+  "input-types": {
+    "t": { "id": "thermalfoundation:glass",
+		   "meta": 7},
+    "i": { "id": "enderio:block_enlightened_fused_glass",
+		   "meta": 0,
+		   "ignore-meta":true
+		 }
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+      ["t","i","t"],
+      ["i","t","i"],
+      ["t","i","t"]
+    ]
+  ]
+}

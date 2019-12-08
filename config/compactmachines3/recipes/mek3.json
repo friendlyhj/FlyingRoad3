@@ -1,0 +1,46 @@
+{
+  "name": "mek3",
+  "target-item": "mekanismgenerators:reactor",
+  "target-meta": 2,
+  "target-count": 1,
+
+  "duration": 900,
+
+  "catalyst": "draconicevolution:wyvern_energy_core",
+
+  "input-types": {
+    "w": {  "id": "mekanismgenerators:reactor",
+			"meta": 1,
+			"ignore-nbt":true},
+    "a": { "id": "thermalfoundation:storage_alloy",
+		   "meta": 7
+		 },
+	"g": { "id": "mekanismgenerators:generator",
+		   "meta": 11,
+		   "ignore-nbt":true
+		 },
+	"e": { "id": "enderio:block_cap_bank",
+		   "meta": 3,
+		   "ignore-nbt":true
+		 }
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+      ["w","w","w"],
+      ["w","a","w"],
+      ["w","w","w"]
+    ],
+    [
+      ["a","g","a"],
+      ["g","e","g"],
+      ["a","g","a"]
+    ],
+    [
+      ["w","w","w"],
+      ["w","w","w"],
+      ["w","w","w"]
+    ]
+  ]
+}

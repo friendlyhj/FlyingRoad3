@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+	<recipe name="Sagmill: Compressed Cobblestone" disabled= "true" />
+	<recipe name="Sagmill: Double Compressed Cobblestone" disabled= "true"/>
+	<recipe name="Sagmill: Tripple Compressed Cobblestone" disabled= "true"/>
+	<recipe name="Sagmill: Quadruple Compressed Cobblestone" disabled= "true"/>
+	<recipe name="Sagmill: Compressed Gravel" disabled= "true"/>
+	<recipe name="Sagmill: Sagmill: Double Compressed Gravel" disabled= "true"/>
+	<recipe name="Sagmill: Compressed Sand" disabled= "true"/>
+	<recipe name="Sagmill: Double Compressed Sand" disabled= "true"/>
+	<recipe name="Sagmill: Compressed Netherrack" disabled= "true"/>
+	<recipe name="Sagmill: Double Compressed Netherrack" disabled= "true"/>
+	<recipe name="Sagmill: Compressed End Stone" disabled= "true"/>
+	<recipe name="Alloy: Electrical Steel" disabled= "true"/>
+	<recipe name="Alloy: Dark Steel" disabled= "true"/>
+	<recipe name="Vibrant Crystal, casting" disabled= "true"/>
+	<recipe name="Pulsating Crystal, casting" disabled= "true"/>
+	<recipe name="Sagmill: Silicon" disabled="true"/>
+	<recipe name="Sagmill: ClayBlock" disabled="true"/>
+	<recipe name="Enchanter: openblocks.explosive" required="true" disabled="false">
+		<enchanting>
+		  <input name = "dustSulfur" amount="5" />
+		  <enchantment name = "openblocks:explosive" costMultiplier="1" />
+		</enchanting>
+	</recipe>
+	<recipe name="energetic_alloy eiorteis support" required="true" disabled="false">
+		<alloying energy="10000" exp="0.7" >
+		 <input name="ingotGold" />
+		 <input name="eiorteis:item_gr_mix" />
+		 <output name="ENERGETIC_ALLOY" />
+		</alloying>
+	</recipe>
+	<recipe name="steel_si" required="true" disabled="false">
+		<alloying energy="10000" exp="0.5" >
+		 <input name="ingotSteel" />
+		 <input name="itemSilicon"/>
+         <output name="ingotElectricalSteel"/>
+		</alloying>
+    </recipe>
+	<recipe name="steel_dark" required="true">
+		<alloying energy="20000" exp="0.5">
+         <input name="ingotSteel"/>
+         <input name="obsidian"/>
+         <output name="ingotDarkSteel"/>
+		</alloying>
+	</recipe>
+	<recipe name="Alloy: Vivid Alloy" required="true">
+		<alloying energy="24000" exp="1">
+		 <input name="ingotVibrantAlloy" />
+		 <input name="itemPulsatingPowder" />
+		 <input name="minecraft:chorus_fruit" amount="3" />
+		 <output name="ingotVividAlloy" />
+		</alloying>
+	</recipe>
+	<recipe name="naisuanlv" required="true">
+		<alloying energy="18000" exp="0.9">
+		 <input name="ingotAluminum,ingotAluminium" amount="5" />
+		 <input name="ingotIron" />
+		 <input name="dustObsidian" amount="2" />
+		 <output name="ingotAlumite" amount="3" />
+		</alloying>
+	</recipe>
+	<recipe name="os_ir" required="true">
+		<alloying energy="10000" exp="0.2">
+		 <input name="ingotOsmium" />
+		 <input name="ingotIridium" />
+		 <output name="ingotOsmiridium" amount="2" />
+		</alloying>
+	</recipe>
+	<recipe name="silme" required="true">
+		<alloying energy="24000" exp="0.3">
+		 <input name="tconstruct:edible:2" />
+		 <input name="ingotIron" />
+		 <input name="stone" amount="4"/>
+		 <output name="ingotKnightslime" />
+		</alloying>
+	</recipe>
+	<recipe name="Sagmill: ClayBlock Fix" required="true">
+		<sagmilling energy="24000">
+		 <input name="minecraft:clay"/>
+		 <output name="minecraft:clay_ball" amount="3"/>
+		 <output name="minecraft:clay_ball" chance="0.5" />
+		</sagmilling>
+	</recipe>
+	<recipe name="blackQuartzBlock" required="true">
+		<sagmilling energy="2400">
+		 <input name="blockQuartzBlack" />
+		 <output name="dustQuartzBlack" amount="4"/>
+		</sagmilling>
+	</recipe>
+	<recipe name="nether_ingot_sky" required="true">
+		<alloying energy="12000" exp="0.1">
+		  <input name="nuggetIron" amount="4"/>
+		  <input name="minecraft:soul_sand"/>
+		  <input name="minecraft:rotten_flesh" amount="4"/>
+		  <output name="contenttweaker:nether_ingot" amount="4"/>
+		</alloying>
+	</recipe>
+</enderio:recipes>

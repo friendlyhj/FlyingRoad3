@@ -1,0 +1,47 @@
+{
+  "name": "mek2",
+  "target-item": "mekanismgenerators:reactor",
+  "target-meta": 1,
+  "target-count": 4,
+
+  "duration": 60,
+
+  "catalyst": "mekanism:controlcircuit",
+  "catalyst-meta": 3,
+
+  "input-types": {
+    "s": { "id": "actuallyadditions:block_misc",
+			"meta": 2},
+    "e": { "id": "actuallyadditions:block_misc",
+		   "meta": 8
+		 },
+	"g": { "id": "mekanism:basicblock",
+		   "meta": 8
+		 },
+	"r": { "id": "minecraft:unpowered_repeater",
+			"meta": 0,
+			"ignore-nbt":true,
+			"ignore-meta":true,
+			"item": {
+			"id": "minecraft:repeater",
+			"meta": 0,
+			"count": 4
+			}
+		}
+	
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+      ["_","r","_"],
+      ["r","_","r"],
+      ["_","r","_"]
+    ],
+    [
+      ["g","s","g"],
+      ["s","e","s"],
+      ["g","s","g"]
+    ]
+  ]
+}
