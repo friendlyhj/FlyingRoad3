@@ -1,0 +1,164 @@
+{
+    "images":
+    {
+        "title":
+        {
+            "image" : "modpack:gui/flying_road.png",
+            "posX" : -137,
+            "posY" : 30,
+            "width" : 512,
+            "height" : 512,
+            "alignment" : "top_center"
+        }
+    },
+    
+    "buttons":
+    {
+        "singleplayer":
+        {
+            "text" : "menu.singleplayer",
+            "posX" : -100,
+            "posY" : 48,
+            "width" : 200,
+            "height" : 20,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "singleplayer"
+            }
+        },
+        
+        "multiplayer":
+        {
+            "text" : "menu.multiplayer",
+            "posX" : -100,
+            "posY" : 72,
+            "width" : 200,
+            "height" : 20,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "multiplayer"
+            }
+        },
+        
+        "mods":
+        {
+            "text" : "fml.menu.mods",
+            "posX" : -100,
+            "posY" : 96,
+            "width" : 200,
+            "height" : 20,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "mods"
+            }
+        },
+            
+        "options":
+        {
+            "text" : "menu.options",
+            "posX" : -100,
+            "posY" : 132,
+            "width" : 98,
+            "height" : 20,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "options"
+            }
+        },
+        
+        "quit":
+        {
+            "text" : "menu.quit",
+            "posX" : 2,
+            "posY" : 132,
+            "width" : 98,
+            "height" : 20,
+            "action" : 
+            {
+                "type" : "quit"
+            }
+        },
+        
+        "language":
+        {
+            "text" : "",
+            "posX" : -124,
+            "posY" : 132,
+            "width" : 20,
+            "height" : 20,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "languages"
+            }
+        }
+    },
+    
+    "labels":
+    {
+        "welcome":{
+			"text":"欢迎！#username#",
+			"posX": 2,
+			"posY": -40,
+			"color": -1,
+			"alignment": "bottom_left"
+		},
+		"versionMC":{
+			"text":"MC1.12.2+Forge#forgeversion#",
+			"posX": 2,
+			"posY": -30,
+			"color": -1,
+			"alignment": "bottom_left"
+		},
+		"mods":{
+			"text":"#modsactive#个模组加入了这个世界",
+			"posX": 2,
+			"posY": -20,
+			"color": -1,
+			"alignment": "bottom_left"
+		},
+		"versionmodpack":{
+			"text":"飞翔之路V3.2.1-Fix2",
+			"posX": 2,
+			"posY": -10,
+			"color" : -1,
+			"alignment": "bottom_left"
+		},
+        "mojang":
+        {
+            "text" : "Copyright Mojang AB. Do not distribute!",
+            "hoverText" : "§nCopyright Mojang AB. Do not distribute!",
+            "posX" : -197,
+            "posY" : -10,
+            "color" : -1,
+            "alignment" : "bottom_right",
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "credits"
+            }
+        }
+    },
+    
+    "other":
+    {
+        "splash-text":
+        {
+            "posX" : 90,
+            "posY" : 70,
+            "color" : -256,
+            "alignment" : "top_center",
+            "texts" : "file:modpack:gui/texts.txt"
+        },
+        
+        "background":
+        {
+            "image":"modpack:gui/background.png",
+			"mode":"stretch"
+        }
+    }
+}

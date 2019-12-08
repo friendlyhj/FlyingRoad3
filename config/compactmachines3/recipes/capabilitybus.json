@@ -1,0 +1,68 @@
+{
+    "name": "capabilitybus",
+    "target-item": "rf-capability-adapter:aecapabilityadapter_part",
+    "target-count": 2,
+  
+    "duration": 200,
+    "symmetrical": true,
+    "catalyst": "appliedenergistics2:part",
+    "catalyst-meta": 56,
+    
+  "input-types": {
+    "a": {
+      "id": "appliedenergistics2:quartz_fixture",
+      "meta": 1,
+      "item": {
+        "id": "appliedenergistics2:quartz_fixture",
+        "meta": 0,
+        "count": 8
+      }
+    },
+    "b": {
+      "id": "appliedenergistics2:fluix_block",
+      "meta": 0
+    },
+    "c": {
+      "id": "compactmachines3:wallbreakable",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      [
+        "_",
+        "_",
+        "_"
+      ],
+      [
+        "_",
+        "b",
+        "_"
+      ],
+      [
+        "_",
+        "_",
+        "_"
+      ]
+    ],
+    [
+      [
+        "a",
+        "a",
+        "a"
+      ],
+      [
+        "a",
+        "c",
+        "a"
+      ],
+      [
+        "a",
+        "a",
+        "a"
+      ]
+    ]
+  ]
+
+
+}

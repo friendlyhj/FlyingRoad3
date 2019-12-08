@@ -1,0 +1,49 @@
+{
+  "name": "mek1",
+  "target-item": "mekanismgenerators:reactor",
+  "target-meta": 0,
+  "target-count": 1,
+
+  "duration": 1200,
+
+  "catalyst": "draconicevolution:wyvern_energy_core",
+
+  "input-types": {
+    "w": { "id": "mekanismgenerators:reactor",
+			"meta": 1,
+			"ignore-nbt": true},
+    "l": { "id": "mysticalagriculture:glowstone_lamp"},
+	"g": { "id": "enderio:block_enlightened_fused_quartz",
+		   "meta": 0,
+		   "ignore-meta": true
+		 },
+	"o": { "id": "mekanism:basicblock",
+			"meta": 2},
+	"e": { "id": "actuallyadditions:block_crystal_empowered",
+			"meta": 4}
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+	  ["w","l","w"],
+	  ["g","e","g"],
+	  ["w","l","w"]
+	],
+    [
+      ["w","e","w"],
+      ["e","o","e"],
+      ["w","e","w"]
+    ],
+    [
+      ["w","e","w"],
+      ["e","o","e"],
+      ["w","e","w"]
+    ],
+    [
+      ["w","w","w"],
+      ["w","w","w"],
+      ["w","w","w"]
+    ]
+  ]
+}

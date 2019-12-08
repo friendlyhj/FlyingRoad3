@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config>
+    <lines at="topleft">
+        <line>
+            <str>第{day}天, {mctime} (</str>
+            <if>
+                <var>daytime</var>
+                <str>$e昼</str>
+                <str>$8夜</str>
+            </if>
+            <str>$f)</str>
+        </line>
+        <line>
+            <str>生物群系: $e{biome}$f</str>
+            <if>
+                <var>slimes</var>
+                <str> ($aSlime$f)</str>
+                <str> </str>
+            </if>
+        </line>
+		<line>
+			<str>坐标: X = {xi} Y = {yi} Z = {zi}</str>
+		</line>
+        <line>
+            <str>亮度: </str>
+            <max>
+                <var>light</var>
+                <num>7.5</num>
+                <str>$e</str>
+                <str>$c</str>
+            </max>
+            <var>light</var>
+            <str>$r (方块亮度: </str>
+            <max>
+                <var>lightnosun</var>
+                <num>7.5</num>
+                <str>$e</str>
+                <str>$c</str>
+            </max>
+            <var>lightnosun</var>
+            <str>$r)</str>
+        </line>
+        <line>
+            <str>$f经验: $e{xpthislevel}$f / $e{xpcap}$f ($e</str>
+            <round>
+                <pct>
+                    <var>xpthislevel</var>
+                    <var>xpcap</var>
+                </pct>
+                <num>0</num>
+            </round>
+            <str>%$f)</str>
+        </line>
+        <line>
+            <str>FPS: </str>
+            <operation>
+                <str>gt</str>
+                <var>fps</var>
+                <num>59</num>
+                <num>45</num>
+                <num>30</num>
+                <num>15</num>
+                <num>0</num>
+                <str>$a</str>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+                <str/>
+            </operation>
+            <var>fps</var>
+        </line>
+        <line>
+            <str>实体: $e{entitiesrendered}$f / $e{entitiestotal}$f</str>
+        </line>
+		<line>
+			<str>即将</str>
+			<if>
+				<var>raining</var>
+				<str>放晴:</str>
+				<str>下雨:</str>
+			</if>
+			<str> $e{nextweatherchange}$f</str>
+		</line>
+    </lines>
+    <lines at="bottomleft">
+        <line>
+            <var>mainhandicon</var>
+            <str> </str>
+            <operation>
+                <str>ge</str>
+                <pct>
+                    <var>mainhanddamageleft</var>
+                    <var>mainhandmaxdamage</var>
+                </pct>
+                <num>50</num>
+                <num>20</num>
+                <num>10</num>
+                <num>0</num>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+                <str/>
+            </operation>
+            <max>
+                <var>mainhanddamageleft</var>
+                <num>0</num>
+                <str>{mainhanddamageleft}$f / $e{mainhandmaxdamage}</str>
+                <var>mainhandname</var>
+            </max>
+        </line>
+        <line>
+            <var>offhandicon</var>
+            <str> </str>
+            <operation>
+                <str>ge</str>
+                <pct>
+                    <var>offhanddamageleft</var>
+                    <var>offhandmaxdamage</var>
+                </pct>
+                <num>50</num>
+                <num>20</num>
+                <num>10</num>
+                <num>0</num>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+                <str/>
+            </operation>
+            <max>
+                <var>offhanddamageleft</var>
+                <num>0</num>
+                <str>{offhanddamageleft}$f / $e{offhandmaxdamage}</str>
+                <var>offhandname</var>
+            </max>
+        </line>
+        <line>
+            <str> </str>
+        </line>
+    </lines>
+    <lines at="bottomright">
+        <line>
+            <max>
+                <var>potiondurationticks0</var>
+                <num>0.5</num>
+                <str>{potionduration0} {potionicon0}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks1</var>
+                <num>0.5</num>
+                <str>{potionduration1} {potionicon1}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks2</var>
+                <num>0.5</num>
+                <str>{potionduration2} {potionicon2}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks3</var>
+                <num>0.5</num>
+                <str>{potionduration3} {potionicon3}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks4</var>
+                <num>0.5</num>
+                <str>{potionduration4} {potionicon4}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks5</var>
+                <num>0.5</num>
+                <str>{potionduration5} {potionicon5}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks6</var>
+                <num>0.5</num>
+                <str>{potionduration6} {potionicon6}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks7</var>
+                <num>0.5</num>
+                <str>{potionduration7} {potionicon7}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <max>
+                <var>potiondurationticks8</var>
+                <num>0.5</num>
+                <str>{potionduration8} {potionicon8}</str>
+                <str/>
+            </max>
+        </line>
+        <line>
+            <str> </str>
+        </line>
+        <line>
+            <operation>
+                <str>ge</str>
+                <pct>
+                    <var>helmetdamageleft</var>
+                    <var>helmetmaxdamage</var>
+                </pct>
+                <num>50</num>
+                <num>20</num>
+                <num>10</num>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+            </operation>
+            <max>
+                <var>helmetdamageleft</var>
+                <num>0</num>
+                <str>{helmetdamageleft}$f / $e{helmetmaxdamage}</str>
+                <str/>
+            </max>
+            <str> </str>
+            <var>helmeticon</var>
+        </line>
+        <line>
+            <operation>
+                <str>ge</str>
+                <pct>
+                    <var>chestplatedamageleft</var>
+                    <var>chestplatemaxdamage</var>
+                </pct>
+                <num>50</num>
+                <num>20</num>
+                <num>10</num>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+            </operation>
+            <max>
+                <var>chestplatedamageleft</var>
+                <num>0</num>
+                <str>{chestplatedamageleft}$f / $e{chestplatemaxdamage}</str>
+                <str/>
+            </max>
+            <str> </str>
+            <var>chestplateicon</var>
+        </line>
+        <line>
+            <operation>
+                <str>ge</str>
+                <pct>
+                    <var>leggingsdamageleft</var>
+                    <var>leggingsmaxdamage</var>
+                </pct>
+                <num>50</num>
+                <num>20</num>
+                <num>10</num>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+            </operation>
+            <max>
+                <var>leggingsdamageleft</var>
+                <num>0</num>
+                <str>{leggingsdamageleft}$f / $e{leggingsmaxdamage}</str>
+                <str/>
+            </max>
+            <str> </str>
+            <var>leggingsicon</var>
+        </line>
+        <line>
+            <operation>
+                <str>ge</str>
+                <pct>
+                    <var>bootsdamageleft</var>
+                    <var>bootsmaxdamage</var>
+                </pct>
+                <num>50</num>
+                <num>20</num>
+                <num>10</num>
+                <str>$e</str>
+                <str>$6</str>
+                <str>$c</str>
+                <str>$4</str>
+            </operation>
+            <max>
+                <var>bootsdamageleft</var>
+                <num>0</num>
+                <str>{bootsdamageleft}$f / $e{bootsmaxdamage}</str>
+                <str/>
+            </max>
+            <str> </str>
+            <var>bootsicon</var>
+        </line>
+    </lines>
+</config>

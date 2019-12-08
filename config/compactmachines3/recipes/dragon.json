@@ -1,0 +1,39 @@
+{
+  "name": "dragon",
+  "target-item": "draconicevolution:crafting_injector",
+  "target-meta": 0,
+  "target-count": 2,
+
+  "duration": 600,
+
+  "catalyst": "draconicevolution:draconic_core",
+
+  "input-types": {
+    "q": { "id": "appliedenergistics2:quartz_block" },
+    "i": { "id": "actuallyadditions:block_crystal_empowered",
+		   "meta": 5
+		 },
+	"d": { "id": "mekanism:plasticblock",
+		   "meta": 12
+		 }
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+      ["_","_","_"],
+      ["_","i","_"],
+      ["_","_","_"]
+    ],
+    [
+      ["d","q","d"],
+      ["q","i","q"],
+      ["d","q","d"]
+    ],
+    [
+      ["q","q","q"],
+      ["q","q","q"],
+      ["q","q","q"]
+    ]
+  ]
+}

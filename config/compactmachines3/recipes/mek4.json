@@ -1,0 +1,44 @@
+{
+  "name": "mek4",
+  "target-item": "mekanismgenerators:reactor",
+  "target-meta": 3,
+  "target-count": 1,
+
+  "duration": 800,
+
+  "catalyst": "thermalfoundation:material",
+  "catalyst-meta": 293,
+
+  "input-types": {
+    "c": { "id": "minecraft:unpowered_comparator",
+		   "meta": 0,
+		   "ignore-meta": true,
+		   "ignore-nbt": true,
+		   "item": {
+				"id": "minecraft:comparator",
+				"meta": 0,
+				"count": 5
+			}
+		},
+    "w": { "id": "mekanismgenerators:reactor",
+			"meta": 1,
+			"ignore-nbt": true},
+	"p": { "id": "mekanism:plasticblock",
+		   "meta": 1
+		 }
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+      ["_","_","_"],
+      ["_","c","_"],
+      ["_","_","_"]
+    ],
+    [
+      ["c","p","c"],
+      ["p","w","p"],
+      ["c","p","c"]
+    ]
+  ]
+}
