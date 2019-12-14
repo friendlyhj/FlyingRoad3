@@ -1100,7 +1100,7 @@
             "0:10": {
               "id:8": "contenttweaker:material_part",
               "Count:3": 4,
-              "OreDict:8": "",
+              "OreDict:8": "pieceCobalt",
               "Damage:3": 5
             }
           },
