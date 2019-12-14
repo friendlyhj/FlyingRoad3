@@ -14,7 +14,10 @@ import crafttweaker.block.IBlockDefinition;
 
 zenClass youyihjLib {
 	zenConstructor() {
+		this.tweakRecipeAmount = 0;
 	}
+
+	var tweakRecipeAmount as int = 0;
 	//获取物品ID 原版石头 minecraft:stone
 	function getItemName(input as IItemStack) as string {
 		val id as string = input.definition.id;
@@ -34,14 +37,19 @@ zenClass youyihjLib {
 	}
 	
 	//修改合成，先删后加，第一个参数true表有序，false无序，需要二维数组（即使是无序）
-	function recipeTweak(isShaped as bool,out as IItemStack,input as IIngredient[][]) {
-		val recipeName as string = this.getItemNameWithUnderline(out);
+	function recipeTweak(isShaped as bool,out as IItemStack,input as IIngredient[][]) as int {
+		var recipeName as string = this.getItemNameWithUnderline(out);
+		if (out.hasTag) {
+			recipeName ~= ("_withtag_" ~ this.tweakRecipeAmount);
+		}
 		recipes.remove(out.withAmount(1),true);
 		if (isShaped) {
 			recipes.addShaped(recipeName,out,input);
 		} else {
 			recipes.addShapeless(recipeName,out,input[0]);
 		}
+		this.tweakRecipeAmount += 1;
+		return this.tweakRecipeAmount;
 	}	
 	function createSurround(core as IIngredient,surrounded as IIngredient) as IIngredient[][] {
 		return [[surrounded,surrounded,surrounded],
