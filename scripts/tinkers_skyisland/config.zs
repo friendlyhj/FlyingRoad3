@@ -7,7 +7,7 @@ import crafttweaker.item.IItemStack;
 
 //Ores which can be obtained by Prospector trait
 //可以通过探矿特性获取的矿物
-static orelist as int[][string] = {
+static oreList as int[][string] = {
 	//"name" : [color,chance,isNetherOre] (1 = 1‰) (isNetherOre = 0 means Overworld, 1 means Nether)
 	"Iron" : [0xBF8040,200,0],
 	"Gold" : [0xFFFF00,120,0],
@@ -27,7 +27,7 @@ static orelist as int[][string] = {
 
 //Ores or Gems which can be obtained by Lapidary Calibration trait
 //可以通过宝石刻印校准获取的矿物
-static gemlist as int[IItemStack] = {
+static gemList as int[IItemStack] = {
 	//IItemStack : chance (1 = 1%)
 	<item:minecraft:redstone> : 18,
 	<item:minecraft:glowstone_dust> : 8,

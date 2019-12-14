@@ -105,7 +105,7 @@ prospector.canApplyTogetherTrait = function(TraitRepresentation, otherTrait){
 };
 prospector.extraInfo = function(thisTrait, item, tag){
 	var info as string[] = ["破坏沙砾或地狱岩时，获得："];
-	for key,value in scripts.tinkers_skyisland.config.orelist{
+	for key,value in scripts.tinkers_skyisland.config.oreList{
 		info += game.localize("base.material." ~ key.toLowerCase()) ~ " : " ~ ((0.0 + value[1]) / 10) ~ "%"; 
 	}
 	return info;
@@ -113,7 +113,7 @@ prospector.extraInfo = function(thisTrait, item, tag){
 prospector.onBlockHarvestDrops = function(trait,tool,event){
 	// BEGIN FORTUNE SUPPORT. HAS SOME PROBLEM?
 	val tab as float[] = [1.0, 1.1, 1.3, 1.5];
-	val lib as int[][string] = scripts.tinkers_skyisland.config.orelist;
+	val lib as int[][string] = scripts.tinkers_skyisland.config.oreList;
 	for key,value in lib {
 		lib[key][1] = value[1] * tab[event.fortuneLevel];
 	}
@@ -144,18 +144,18 @@ prospector.onBlockHarvestDrops = function(trait,tool,event){
 		event.drops = pieceDrop.values;		
 	}
 	if (compress) {
-		var isdo as bool = false;
+		var isDo as bool = false;
 		if (<ore:compressed1xGravel> has dropping) {
 			group = 0;
-			isdo = true;
+			isDo = true;
 		} else if (<ore:compressed1xNetherrack> has dropping){
 			group = 1;
-			isdo = true;
+			isDo = true;
 		}
-		if (isdo) {
+		if (isDo) {
 			var chance as double[string] = {};
 			var member as string[int] = {};
-			var returnitem as int[string] = {};
+			var returnItem as int[string] = {};
 			var j as int = 0;
 			for key,value in lib{
 				if (value[2] == group) {
@@ -168,15 +168,15 @@ prospector.onBlockHarvestDrops = function(trait,tool,event){
 				for i in 0 to j {
 					var seed as double = Math.random();
 					if (seed >= chance[member[i]]){
-						if (isNull(returnitem[member[i]])) {
-							returnitem[member[i]] = 1;
+						if (isNull(returnItem[member[i]])) {
+							returnItem[member[i]] = 1;
 						} else {
-							returnitem[member[i]] = returnitem[member[i]] + 1;
+							returnItem[member[i]] = returnItem[member[i]] + 1;
 						}
 					}
 				}
 			}
- 			for key,value in returnitem{
+ 			for key,value in returnItem{
 				var stack as IItemStack = oreDict.get("piece" + key).firstItem;
 				if (!isNull(stack) && oreDict in ("ore" + key)) {
 					pieceDropCompressed[key] = stack * value % 100;
@@ -199,7 +199,7 @@ lapidary.canApplyTogetherTrait = function(TraitRepresentation, otherTrait){
 };
 lapidary.extraInfo = function(thisTrait, item, tag){
 	var info as string[] = ["破坏石头后获得："];
-	for key,value in scripts.tinkers_skyisland.config.gemlist{
+	for key,value in scripts.tinkers_skyisland.config.gemList{
 		info += (key.displayName ~ " : " ~ value ~ "%");
 	}
 	return info;
@@ -210,7 +210,7 @@ lapidary.onBlockHarvestDrops = function(trait,tool,event){
 	var gemDrop as WeightedItemStack[int] = {};
 	var fortune as int = event.fortuneLevel;
 	if (id == "minecraft:stone") {
-		for key,value in scripts.tinkers_skyisland.config.gemlist{
+		for key,value in scripts.tinkers_skyisland.config.gemList{
 			j += 1;
 			if (fortune <= 0) {gemDrop[j] = key % value;} 
 			//REGISTER AND FORTUNE SUPPORT
@@ -268,23 +268,23 @@ inf.onToolDamage = function(trait, tool, unmodifiedAmount, newAmount, holder) {
 };
 inf.register();
 
-val plant_matter = mods.contenttweaker.tconstruct.MaterialBuilder.create("plant_matter");
-plant_matter.color = 0x55CA52;
-plant_matter.craftable = true; 
-plant_matter.addItem(<item:contenttweaker:plant_matter>);
-plant_matter.representativeItem = <item:contenttweaker:plant_matter>;
-plant_matter.addHeadMaterialStats(18,1.5f,1,0);
-plant_matter.addHandleMaterialStats(1.01,-5);
-plant_matter.addExtraMaterialStats(5);
-plant_matter.addMaterialTrait(<ticontrait:soft>,"head");
-plant_matter.addMaterialTrait(<ticontrait:soft>,"handle");
-plant_matter.addMaterialTrait(<ticontrait:soft>,"extra");
-plant_matter.addMaterialTrait(<ticontrait:moist>,"head");
-plant_matter.addMaterialTrait(<ticontrait:vibrant>,"extra");
-plant_matter.addMaterialTrait("ecological","handle");
-plant_matter.itemLocalizer = function(thisMaterial,itemName){return "自然物质 " + itemName;};
-plant_matter.localizedName = "自然物质";
-plant_matter.register();
+val plantMatter = mods.contenttweaker.tconstruct.MaterialBuilder.create("plant_matter");
+plantMatter.color = 0x55CA52;
+plantMatter.craftable = true; 
+plantMatter.addItem(<item:contenttweaker:plant_matter>);
+plantMatter.representativeItem = <item:contenttweaker:plant_matter>;
+plantMatter.addHeadMaterialStats(18,1.5f,1,0);
+plantMatter.addHandleMaterialStats(1.01,-5);
+plantMatter.addExtraMaterialStats(5);
+plantMatter.addMaterialTrait(<ticontrait:soft>,"head");
+plantMatter.addMaterialTrait(<ticontrait:soft>,"handle");
+plantMatter.addMaterialTrait(<ticontrait:soft>,"extra");
+plantMatter.addMaterialTrait(<ticontrait:moist>,"head");
+plantMatter.addMaterialTrait(<ticontrait:vibrant>,"extra");
+plantMatter.addMaterialTrait("ecological","handle");
+plantMatter.itemLocalizer = function(thisMaterial,itemName){return "自然物质 " + itemName;};
+plantMatter.localizedName = "自然物质";
+plantMatter.register();
 
 val aqr = mods.contenttweaker.tconstruct.MaterialBuilder.create("aquamarinec");
 aqr.color = 0x385CB8;

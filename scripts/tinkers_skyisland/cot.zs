@@ -238,7 +238,7 @@ static Builder as PartBuilder = mods.contenttweaker.MaterialSystem.getPartBuilde
 static piece as Part = Builder.setName("piece").setPartType(MaterialSystem.getPartType("item")).setOreDictName("piece").build();
 static materiallist as Material[string] = {};
 
-for key,value in scripts.tinkers_skyisland.config.orelist{
+for key,value in scripts.tinkers_skyisland.config.oreList{
 	materiallist[key] = newMaterial(key,value[0]);
 }
 
