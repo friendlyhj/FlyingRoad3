@@ -108,6 +108,16 @@ zenClass youyihjLib {
 		return "Invalid";
 	}
 
+	function getMetalNameNew(ore as IOreDictEntry, partName as string) as string {
+		var name as string = ore.name;
+		if (name.length > 0 && partName.length > 0) {
+			if (name.contains(partName)) {
+				return name.substring(partName.length);
+			}
+		}
+		return null;
+	}
+
 	function toLowerCamelCase(arg as string) as string {
         if (arg.contains("_")) { //snake case
             var splitResult as string[] = arg.split("_");
