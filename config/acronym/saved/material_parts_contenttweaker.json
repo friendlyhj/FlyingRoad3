@@ -1,7 +1,7 @@
 {
   "materialMappings": {
-    "osmium_piece": 6,
-    "yellorium_piece": 5,
+    "osmium_piece": 14,
+    "yellorium_piece": 6,
     "aluminium_piece": 3,
     "ardite_piece": 1,
     "nickel_piece": 11,
@@ -9,7 +9,7 @@
     "copper_piece": 13,
     "tin_piece": 9,
     "gold_piece": 0,
-    "cobalt_piece": 4,
+    "cobalt_piece": 5,
     "platinum_piece": 8,
     "iron_piece": 2,
     "iridium_piece": 12,
