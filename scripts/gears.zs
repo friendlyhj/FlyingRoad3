@@ -39,11 +39,14 @@ function rodSupplier(ore as IOreDictEntry) as IIngredient {
 
 val ga as IOreDictEntry = <ore:gearStone>;
 for ench in oreDict.entries {
-	if (ench.name.startsWith("gear") && !ench.name.contains("DarkSteel")) {
-		var key as string = youyihjLib.getMetalName(ench);
+	var key as string = youyihjLib.getMetalNameNew(ench, "gear");
+	if (!isNull(key)) {
 		var gear as IItemStack = ench.firstItem;
 		var ingot as IOreDictEntry = oreDict.get("ingot" ~ key);
 		var rod as IIngredient = rodSupplier(ench);
+		if (key == "DarkSteel") {
+			rod = <tconstruct:tool_rod>.withTag({Material: "dark_steel"});
+		}
 		var nugget as IIngredient = oreDict.get("nugget" ~ key);
 			if (!ingot.empty && ingot.firstItem.definition.owner != "draconicevolution" && ingot.firstItem.definition.owner != "bigreactors") {
 				if (!key.contains("Alum")) {
@@ -61,13 +64,9 @@ for ench in oreDict.entries {
 			mods.immersiveengineering.MetalPress.addRecipe(gear,ingot,<immersiveengineering:mold:1>,16000,6);
 		}
 	}
-} 
+}
 
-youyihjLib.recipeTweak(true, <enderio:item_material:73>,[
-	[<tconstruct:tool_rod>.withTag({Material: "dark_steel"}),<ore:ingotDarkSteel>,<tconstruct:tool_rod>.withTag({Material: "dark_steel"})],
-	[<ore:ingotDarkSteel>,<ore:gearStone>,<ore:ingotDarkSteel>],
-	[<tconstruct:tool_rod>.withTag({Material: "dark_steel"}),<ore:ingotDarkSteel>,<tconstruct:tool_rod>.withTag({Material: "dark_steel"})]
-]);
+
 recipes.remove(<thermalexpansion:augment:337>);
 mods.tconstruct.Casting.removeTableRecipe(<tconstruct:cast_custom:4>);
 <enderio:item_material:11>.displayName = "基岩-铁复合齿轮";
