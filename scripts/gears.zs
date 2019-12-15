@@ -101,7 +101,7 @@ for i, enchJAOPCArod in allJAOPCArod{
 }
 
 //rodmachineIO
-var allrod = [
+var allRod = [
 <immersiveengineering:material:1>,
 <tconstruct:tool_rod>.withTag({Material: "copper"}),
 <tconstruct:tool_rod>.withTag({Material: "silver"}),
@@ -126,7 +126,7 @@ var allrod = [
 <tconstruct:tool_rod>.withTag({Material: "osmium"}),
 <tconstruct:tool_rod>.withTag({Material: "constantan"})] as IItemStack[];
 
-var allnugget = [
+var allNugget = [
 <minecraft:iron_nugget>,
 <mekanism:nugget:5>,
 <thermalfoundation:material:194>,
@@ -151,12 +151,12 @@ var allnugget = [
 <mekanism:nugget:1>,
 <immersiveengineering:metal:26>] as IItemStack[];
 
-for i, enchrod in allrod{
-	var enchnugget = allnugget[i];
+for i, enchRod in allRod{
+	var enchNugget = allNugget[i];
 	if (isEqualOr(i,[6,7,12,13,14,15,16,20,21])){
-	mods.thermalexpansion.Compactor.addPressRecipe(enchrod, enchnugget * 5, 3000);
+	mods.thermalexpansion.Compactor.addPressRecipe(enchRod, enchNugget * 5, 3000);
 	} else {
-	mods.thermalexpansion.Compactor.addPressRecipe(enchrod, enchnugget * 5, 2000);
+	mods.thermalexpansion.Compactor.addPressRecipe(enchRod, enchNugget * 5, 2000);
 	}
 }	
 
@@ -187,8 +187,8 @@ mods.tconstruct.Melting.removeRecipe(<liquid:osmium>,<tconstruct:tool_rod>.withT
 mods.tconstruct.Melting.removeRecipe(<liquid:constantan>,<tconstruct:tool_rod>.withTag({Material: "constantan"}));
 
 //iemold
-val iemold = <immersiveengineering:mold>.definition;
-var iepart = [
+val ieMold = <immersiveengineering:mold>.definition;
+var iePart = [
 <thermalfoundation:material:352>,
 <minecraft:bedrock>, //placeholder useless iepart[1]
 <tconstruct:tool_rod>.withTag({Material: "steel"}),
@@ -197,12 +197,12 @@ var iepart = [
 
 
 for i in 0 to 5{
-	mods.immersiveengineering.Blueprint.removeRecipe(iemold.makeStack(i));
-	var iepartinfor = iepart[i];
+	mods.immersiveengineering.Blueprint.removeRecipe(ieMold.makeStack(i));
+	var iePartInFor = iePart[i];
 	if (i != 1){
-		mods.tconstruct.Casting.addTableRecipe(iemold.makeStack(i),iepartinfor,<liquid:steel>,1440,true,1200);
+		mods.tconstruct.Casting.addTableRecipe(ieMold.makeStack(i),iePartInFor,<liquid:steel>,1440,true,1200);
 	} else {
-		recipes.addShaped(iemold.makeStack(i),[[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>],[<immersiveengineering:mold>,<mekanism:basicblock:2>,<immersiveengineering:mold>],[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>]]);
+		recipes.addShaped(ieMold.makeStack(i),[[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>],[<immersiveengineering:mold>,<mekanism:basicblock:2>,<immersiveengineering:mold>],[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>]]);
 	}
 }
 
