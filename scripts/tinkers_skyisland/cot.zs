@@ -231,17 +231,17 @@ soulwand.maxDamage = 1458;
 soulwand.register(); */
 
 
-function newMaterial(name as string,color as int) as Material{
+function materialBuilder(name as string,color as int) as Material{
 	return MaterialSystem.getMaterialBuilder().setName(name).setColor(color).build();
 }
-static Builder as PartBuilder = mods.contenttweaker.MaterialSystem.getPartBuilder();
-static piece as Part = Builder.setName("piece").setPartType(MaterialSystem.getPartType("item")).setOreDictName("piece").build();
-static materiallist as Material[string] = {};
+static builder as PartBuilder = mods.contenttweaker.MaterialSystem.getPartBuilder();
+static piece as Part = builder.setName("piece").setPartType(MaterialSystem.getPartType("item")).setOreDictName("piece").build();
+static materialList as Material[string] = {};
 
 for key,value in scripts.tinkers_skyisland.config.oreList{
-	materiallist[key] = newMaterial(key,value[0]);
+	materialList[key] = materialBuilder(key,value[0]);
 }
 
-piece.registerToMaterials(materiallist.values);
+piece.registerToMaterials(materialList.values);
 
 

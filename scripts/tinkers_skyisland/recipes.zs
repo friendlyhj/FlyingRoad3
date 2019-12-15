@@ -85,30 +85,36 @@ recipes.addShapeless("black_quartz1",<actuallyadditions:item_misc:5>,[<minecraft
 <entity:minecraft:witch>.removeDrop(<minecraft:redstone>);
 <entity:minecraft:witch>.removeDrop(<minecraft:glowstone_dust>);
 
-val alltictools as IItemStack[] = [
-<tconstruct:pickaxe>,
-<tconstruct:shovel>,
-<tconstruct:hatchet>,
-<tconstruct:mattock>,
-<tconstruct:kama>,
-<tconstruct:hammer>,
-<tconstruct:excavator>,
-<tconstruct:lumberaxe>,
-<tconstruct:scythe>,
-<tconstruct:broadsword>,
-<tconstruct:longsword>,
-<tconstruct:rapier>,
-<tconstruct:frypan>,
-<tconstruct:battlesign>,
-<tconstruct:cleaver>,
-<plustic:laser_gun>,
-<plustic:katana>
+val allTicTools as IItemStack[] = [
+	<plustic:katana>,
+    <plustic:laser_gun>,
+    <tconstruct:arrow>,
+    <tconstruct:battlesign>,
+    <tconstruct:bolt>,
+    <tconstruct:broadsword>,
+    <tconstruct:cleaver>,
+    <tconstruct:crossbow>,
+    <tconstruct:excavator>,
+    <tconstruct:frypan>,
+    <tconstruct:hammer>,
+    <tconstruct:hatchet>,
+    <tconstruct:kama>,
+    <tconstruct:longbow>,
+    <tconstruct:longsword>,
+    <tconstruct:lumberaxe>,
+    <tconstruct:mattock>,
+    <tconstruct:pickaxe>,
+    <tconstruct:rapier>,
+    <tconstruct:scythe>,
+    <tconstruct:shortbow>,
+    <tconstruct:shovel>,
+    <tconstruct:shuriken>
 ];
 
-for enchtictool in alltictools {
-	recipes.addHiddenShapeless(enchtictool.definition.name ~ "_infinity_three", enchtictool.withTag({Unbreakable : 1, display: {Lore: ["§d无限 III"]}}), 
+for enchTicTool in allTicTools {
+	recipes.addHiddenShapeless(enchTicTool.definition.name ~ "_infinity_three", enchTicTool.withTag({Unbreakable : 1, display: {Lore: ["§d无限 III"]}}), 
 	[<mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>,
-	<minecraft:nether_star>,enchtictool.marked("t"),<minecraft:nether_star>,
+	<minecraft:nether_star>,enchTicTool.marked("t"),<minecraft:nether_star>,
 	<mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>],
 	function (out, input, info) {
 		val data as IData = input.t.tag;
