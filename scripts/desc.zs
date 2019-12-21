@@ -1,3 +1,4 @@
+#modloaded bathappymod
 mods.jei.JEI.addDescription(<thermalfoundation:material:136>,"查询蕴魔秘银块获得更多内容。");
 mods.jei.JEI.addDescription(<thermalfoundation:ore:8>,"银矿石接触元始魔力后转换为蕴魔秘银矿石。");
 mods.jei.JEI.addDescription(<thermalfoundation:storage:8>,"银块接触元始魔力后转换为蕴魔秘银块。");

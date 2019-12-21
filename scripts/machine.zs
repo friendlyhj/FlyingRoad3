@@ -1,3 +1,4 @@
+#modloaded bathappymod
 val ex = <contenttweaker:xu_frame>;
 val ed = <extrautils2:machine>.withTag({Type:"extrautils2:generator"}).onlyWithTag({Type:"extrautils2:generator"});
 

@@ -1,3 +1,4 @@
+#modloaded bathappymod
 val ca = <bigreactors:reactorcasing>;
 val fr = <enderio:item_material:54>;
 val cb = <bigreactors:turbinehousing>;

@@ -1,3 +1,4 @@
+#modloaded bathappymod
 import crafttweaker.item.IItemStack;
 recipes.addShaped(<thermalfoundation:material:1028> * 20,[[<forge:bucketfilled>.withTag({FluidName: "ender", Amount: 1000}).onlyWithTag({FluidName: "ender", Amount: 1000}),<mekanism:basicblock:2>,<forge:bucketfilled>.withTag({FluidName: "cryotheum", Amount: 1000}).onlyWithTag({FluidName: "cryotheum", Amount: 1000})],[<ore:blockIridium>,<minecraft:dragon_egg>,<ore:blockIridium>],[<forge:bucketfilled>.withTag({FluidName: "pyrotheum", Amount: 1000}).onlyWithTag({FluidName: "pyrotheum", Amount: 1000}),<mekanism:basicblock:2>,<forge:bucketfilled>.withTag({FluidName: "petrotheum", Amount: 1000}).onlyWithTag({FluidName: "petrotheum", Amount: 1000})]]);
 mods.thermalexpansion.Crucible.addRecipe(<liquid:mana> * 50, <thermalfoundation:material:1028>, 640000);
