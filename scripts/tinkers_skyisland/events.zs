@@ -1,4 +1,5 @@
 #loader crafttweaker
+#modloaded bathappymod
 import crafttweaker.events.IEventManager;
 import crafttweaker.event.PlayerLoggedInEvent;
 import crafttweaker.player.IPlayer;

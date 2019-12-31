@@ -1,5 +1,6 @@
 #loader contenttweaker
 #ignoreBracketErrors
+#modloaded bathappymod
 #priority 45
 import mods.contenttweaker.tconstruct.TraitBuilder;
 import mods.contenttweaker.tconstruct.TraitDataRepresentation;
@@ -10,6 +11,7 @@ import mods.ctutils.utils.Math;
 import crafttweaker.item.WeightedItemStack;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.item.IIngredient;
+import crafttweaker.player.IPlayer;
 
 
 val moist = mods.contenttweaker.tconstruct.TraitBuilder.create("moist");
@@ -228,7 +230,7 @@ soul.color = 0xFFFFFF;
 soul.localizedName = ("摄魂");
 soul.localizedDescription = ("§oGHOST NOT FACING WALL IS PUSH§r\n§f杀死怪物后，副手若有沙子，将其中1-4个转换为灵魂沙");
 soul.calcDamage = function(trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-	if (newDamage >= target.health){
+	if (newDamage >= target.health && !target instanceof IPlayer){
 		var off = crafttweaker.entity.IEntityEquipmentSlot.offhand();
 		var offIng as IIngredient = attacker.offHandHeldItem;
 		var offItem as IItemStack = attacker.offHandHeldItem;

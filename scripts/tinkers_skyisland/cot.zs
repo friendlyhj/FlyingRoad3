@@ -1,5 +1,6 @@
 #loader contenttweaker
 #ignoreBracketErrors
+#modloaded bathappymod
 #priority 233
 import mods.contenttweaker.VanillaFactory;
 import mods.contenttweaker.Block;

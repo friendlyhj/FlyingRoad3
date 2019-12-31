@@ -1,5 +1,6 @@
 #priority 450
 #loader contenttweaker
+#modloaded bathappymod
 //The Config of Tinker's Skyisland
 //匠魂空岛的配置文件
 

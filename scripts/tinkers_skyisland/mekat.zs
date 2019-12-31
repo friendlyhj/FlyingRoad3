@@ -1,4 +1,5 @@
 #loader mekatweaker
+#modloaded bathappymod
 import mods.mekatweaker.Gas;
 import mods.mekatweaker.GasFactory;
 
