@@ -70,7 +70,9 @@ val action as IRecipeAction = function(out, info, player){
 // 合成修改
 var n as int = 0;
 for recipe in recipes.all {
-    if (!isNull(recipe.output) && recipe.output.definition.owner.contains("mystical") && !recipe.name.contains("craft") && recipe.name.contains("seeds")) {
+    var name as string = recipe.name;
+    if (!isNull(recipe.output) && recipe.output.definition.owner.contains("mystical") && 
+        !name.contains("craft") && name.contains("seeds") && !name.contains("inferium")) {
         print("Tweaking recipe for name: " ~ recipe.name);
         recipes.remove(recipe.output);
         recipes.addShaped("seed_" ~ n, recipe.output, recipe.ingredients2D, func, action);
