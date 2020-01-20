@@ -102,8 +102,7 @@ prospector.addItem(<item:contenttweaker:orement>);
 prospector.localizedName = ("探矿");
 prospector.localizedDescription = ("§o地质学家§r\n§f破坏沙砾或地狱岩会掉落矿物碎片。\n与时运兼容，但时运III + 探矿 I 挖沙砾只能获得燧石，请使用探矿 II 挖压缩沙砾。");
 prospector.canApplyTogetherTrait = function(TraitRepresentation, otherTrait){
-	if (otherTrait == "smashment") {return false;}
-	else return true;
+	return otherTrait != "smashment";
 };
 prospector.extraInfo = function(thisTrait, item, tag){
 	var info as string[] = ["破坏沙砾或地狱岩时，获得："];
@@ -196,8 +195,7 @@ lapidary.color = 0xFFFFFF;
 lapidary.localizedName = ("宝石校准");
 lapidary.localizedDescription = ("§o闪闪发亮……§r\n§f破坏石头时掉落各种宝石与非金属材料");
 lapidary.canApplyTogetherTrait = function(TraitRepresentation, otherTrait){
-	if (otherTrait == "prospector") {return false;}
-	else return true;
+	return otherTrait != "prospector";
 };
 lapidary.extraInfo = function(thisTrait, item, tag){
 	var info as string[] = ["破坏石头后获得："];
@@ -229,8 +227,8 @@ val soul = mods.contenttweaker.tconstruct.TraitBuilder.create("soul");
 soul.color = 0xFFFFFF;
 soul.localizedName = ("摄魂");
 soul.localizedDescription = ("§oGHOST NOT FACING WALL IS PUSH§r\n§f杀死怪物后，副手若有沙子，将其中1-4个转换为灵魂沙");
-soul.calcDamage = function(trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-	if (newDamage >= target.health && !target instanceof IPlayer){
+soul.afterHit = function(trait, tool, attacker, target, damageDealt, wasCritical, wasHit) {
+	if (!target.alive && !target instanceof IPlayer){
 		var off = crafttweaker.entity.IEntityEquipmentSlot.offhand();
 		var offIng as IIngredient = attacker.offHandHeldItem;
 		var offItem as IItemStack = attacker.offHandHeldItem;
@@ -250,10 +248,8 @@ soul.calcDamage = function(trait, tool, attacker, target, originalDamage, newDam
 				am = offIng.amount;
 				attacker.setItemToSlot(off,<item:minecraft:soul_sand> * am);
 			}
-			return newDamage * 1.2;
 		}
 	}
-	return newDamage;
 };
 soul.register();
 
@@ -267,6 +263,9 @@ inf.localizedDescription = "§o洪荒之力！§r\n§f达到二级后你的工�
 inf.onToolDamage = function(trait, tool, unmodifiedAmount, newAmount, holder) {
 	if (trait.getData(tool).level == 2) {return 0;}
 	else return newAmount;
+};
+inf.canApplyTogetherTrait = function(TraitRepresentation, otherTrait) {
+	return otherTrait != "brittle";
 };
 inf.register();
 

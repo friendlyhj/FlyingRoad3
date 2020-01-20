@@ -3,23 +3,28 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.data.IData;
+import mods.tconstruct.Casting;
+import mods.tconstruct.Alloy;
+import mods.tconstruct.Melting;
+import mods.tconstruct.Drying;
 
 <contenttweaker:wheat_melt:*>.addTooltip(game.localize("crafttweaker.wheatmelt.description"));
 <contenttweaker:blaze_melt:*>.addTooltip(game.localize("crafttweaker.blazemelt.description"));
+
 val allEntries = oreDict.entries;
 //var oreName as string[] = ["Iron","Gold","Cobalt","Ardite"];
-for enchEntries in allEntries {
-	var oreDictName as string = enchEntries.name;
+for enchEntry in allEntries {
+	var oreDictName as string = enchEntry.name;
 	if (oreDictName.startsWith("piece")){
-		var key as string = oreDictName.substring(5, oreDictName.length);
-		var piece as IItemStack = enchEntries.firstItem;
+		var key as string = oreDictName.substring(5);
+		var piece as IItemStack = enchEntry.firstItem;
 		var ore as IItemStack = oreDict.get("ore" + key).firstItem;
-		if (!isNull(ore) && !isNull(piece)) {recipes.addShaped("pieceToOre_" + key,ore,[[piece,piece],[piece,piece]]);}
+		if (!isNull(ore) && !isNull(piece)) {recipes.addShaped("piece_to_ore_" + key,ore,[[piece,piece],[piece,piece]]);}
 	}
 }
 
-<ore:itemSoulMix>.add(<contenttweaker:soul_mixture>);
-
+<ore:itemSoulMixture>.add(<contenttweaker:soul_mixture>);
+<ore:ingotNetherEssential>.add(<contenttweaker:nether_ingot>);
 
 recipes.addShaped("plant_matter",<contenttweaker:plant_matter>,
 [[null,<ore:treeLeaves>,null],
@@ -53,30 +58,30 @@ recipes.addShaped("orement",<contenttweaker:orement>,
 
 recipes.addShapeless("soul_mixture",<contenttweaker:soul_mixture> * 2,[<minecraft:rotten_flesh>,<minecraft:rotten_flesh>,<minecraft:dye:15>,<minecraft:dye:15>,<minecraft:dye:15>,<minecraft:gunpowder>]);
 
-mods.tconstruct.Casting.addTableRecipe(<contenttweaker:aquamarinec>,<contenttweaker:aquamarine>,<liquid:cobalt>,144,true,1975);
-mods.tconstruct.Casting.addTableRecipe(<minecraft:slime_ball>,<minecraft:magma_cream>,<liquid:water>,2500,true,100);
+Casting.addTableRecipe(<contenttweaker:aquamarinec>,<contenttweaker:aquamarine>,<liquid:cobalt>,144,true,1975);
+Casting.addTableRecipe(<minecraft:slime_ball>,<minecraft:magma_cream>,<liquid:water>,2500,true,100);
 mods.mekanism.GasConversion.register(<contenttweaker:soul_mixture>, <gas:soul> * 200);
 mods.mekanism.chemical.injection.addRecipe(<minecraft:sand>, <gas:soul>, <minecraft:soul_sand>);
-mods.tconstruct.Melting.addRecipe(<liquid:soulsand> * 80,<minecraft:soul_sand>, 140);
-mods.tconstruct.Alloy.addRecipe(<liquid:nether_essential> * 120,[<liquid:iron> * 32, <liquid:soulsand> * 40, <liquid:blood> * 80]);
-mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>,<tconstruct:cast>.withTag({PartType: "tconstruct:tough_tool_rod"}),<liquid:nether_essential>, 960, false, 200);
-mods.tconstruct.Casting.addBasinRecipe(<minecraft:netherrack>,<ore:cobblestone>,<liquid:nether_essential>, 60, true, 20);
-mods.tconstruct.Casting.addTableRecipe(<minecraft:ghast_tear>,<ore:enderpearl>,<liquid:nether_essential>, 6000, true, 1000);
-mods.tconstruct.Casting.addTableRecipe(<minecraft:nether_wart>,<minecraft:pumpkin_seeds>,<liquid:nether_essential>, 3600, true, 860);
-mods.tconstruct.Casting.addTableRecipe(<contenttweaker:clay_sapling>,<ore:treeSapling>,<liquid:clay>, 1440, true, 2880);
-mods.tconstruct.Drying.addRecipe(<tconstruct:slime_sapling>,<contenttweaker:clay_sapling>, 12000);
-mods.tconstruct.Casting.addBasinRecipe(<tconstruct:slime_dirt>,<minecraft:dirt>,<liquid:water>, 8000, true, 800);
-mods.tconstruct.Casting.addTableRecipe(<tconstruct:slime_sapling:1>,<tconstruct:slime_sapling>,<liquid:gold>, 1440, true, 1200);
-mods.tconstruct.Casting.addTableRecipe(<tconstruct:slime_sapling:2>,<tconstruct:slime_sapling>,<liquid:nether_essential>, 6000, true, 1200);
-mods.tconstruct.Casting.addTableRecipe(<contenttweaker:quartz_shard>,<tconstruct:cast>.withTag({PartType: "tconstruct:shard"}),<liquid:glass>, 2000, false, 60);
-mods.tconstruct.Melting.addRecipe(<liquid:obsidiangold> * 144,<contenttweaker:gildediron>,500);
-mods.tconstruct.Alloy.addRecipe(<liquid:obsidiangold> * 1,[<liquid:gold> * 1, <liquid:obsidian> * 2]);
-mods.tconstruct.Casting.addTableRecipe(<contenttweaker:gildediron>,<tconstruct:cast_custom>,<liquid:obsidiangold>, 144, false, 40);
-mods.tconstruct.Casting.addBasinRecipe(<appliedenergistics2:sky_stone_block>,<appliedenergistics2:material:45>,<liquid:lava>, 2000, true, 80);
-mods.tconstruct.Casting.addBasinRecipe(<minecraft:end_stone>,<ore:cobblestone>,<liquid:ender>, 125, true, 40);
-mods.tconstruct.Casting.addBasinRecipe(<minecraft:soul_sand>,null,<liquid:soulsand>, 80, false, 20);
-mods.tconstruct.Casting.addTableRecipe(<contenttweaker:nether_ingot>,<tconstruct:cast_custom>,<liquid:nether_essential>, 60, false, 40);
-mods.tconstruct.Melting.addRecipe(<liquid:nether_essential> * 60,<contenttweaker:nether_ingot>,480);
+Melting.addRecipe(<liquid:soulsand> * 80,<minecraft:soul_sand>, 140);
+Alloy.addRecipe(<liquid:nether_essential> * 120,[<liquid:iron> * 32, <liquid:soulsand> * 40, <liquid:blood> * 80]);
+Casting.addTableRecipe(<minecraft:blaze_rod>,<tconstruct:cast>.withTag({PartType: "tconstruct:tough_tool_rod"}),<liquid:nether_essential>, 960, false, 200);
+Casting.addBasinRecipe(<minecraft:netherrack>,<ore:cobblestone>,<liquid:nether_essential>, 60, true, 20);
+Casting.addTableRecipe(<minecraft:ghast_tear>,<ore:enderpearl>,<liquid:nether_essential>, 6000, true, 1000);
+Casting.addTableRecipe(<minecraft:nether_wart>,<minecraft:pumpkin_seeds>,<liquid:nether_essential>, 3600, true, 860);
+Casting.addTableRecipe(<contenttweaker:clay_sapling>,<ore:treeSapling>,<liquid:clay>, 1440, true, 2880);
+Drying.addRecipe(<tconstruct:slime_sapling>,<contenttweaker:clay_sapling>, 12000);
+Casting.addBasinRecipe(<tconstruct:slime_dirt>,<minecraft:dirt>,<liquid:water>, 8000, true, 800);
+Casting.addTableRecipe(<tconstruct:slime_sapling:1>,<tconstruct:slime_sapling>,<liquid:gold>, 1440, true, 1200);
+Casting.addTableRecipe(<tconstruct:slime_sapling:2>,<tconstruct:slime_sapling>,<liquid:nether_essential>, 6000, true, 1200);
+Casting.addTableRecipe(<contenttweaker:quartz_shard>,<tconstruct:cast>.withTag({PartType: "tconstruct:shard"}),<liquid:glass>, 2000, false, 60);
+Melting.addRecipe(<liquid:obsidiangold> * 144,<contenttweaker:gildediron>,500);
+Alloy.addRecipe(<liquid:obsidiangold> * 1,[<liquid:gold> * 1, <liquid:obsidian> * 2]);
+Casting.addTableRecipe(<contenttweaker:gildediron>,<tconstruct:cast_custom>,<liquid:obsidiangold>, 144, false, 40);
+Casting.addBasinRecipe(<appliedenergistics2:sky_stone_block>,<appliedenergistics2:material:45>,<liquid:lava>, 2000, true, 80);
+Casting.addBasinRecipe(<minecraft:end_stone>,<ore:cobblestone>,<liquid:ender>, 125, true, 40);
+Casting.addBasinRecipe(<minecraft:soul_sand>,null,<liquid:soulsand>, 80, false, 20);
+Casting.addTableRecipe(<contenttweaker:nether_ingot>,<tconstruct:cast_custom>,<liquid:nether_essential>, 60, false, 40);
+Melting.addRecipe(<liquid:nether_essential> * 60,<contenttweaker:nether_ingot>,480);
 
 recipes.addShapeless("black_quartz",<actuallyadditions:item_misc:5>,[<minecraft:quartz>,<ore:dustCoal>]);
 recipes.addShapeless("black_quartz1",<actuallyadditions:item_misc:5>,[<minecraft:quartz>,<ore:dustCharcoal>]);
