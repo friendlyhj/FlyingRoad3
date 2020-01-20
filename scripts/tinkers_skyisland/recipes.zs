@@ -14,13 +14,13 @@ import mods.tconstruct.Drying;
 val allEntries = oreDict.entries;
 //var oreName as string[] = ["Iron","Gold","Cobalt","Ardite"];
 for enchEntry in allEntries {
-	var oreDictName as string = enchEntry.name;
-	if (oreDictName.startsWith("piece")){
-		var key as string = oreDictName.substring(5);
-		var piece as IItemStack = enchEntry.firstItem;
-		var ore as IItemStack = oreDict.get("ore" + key).firstItem;
-		if (!isNull(ore) && !isNull(piece)) {recipes.addShaped("piece_to_ore_" + key,ore,[[piece,piece],[piece,piece]]);}
-	}
+    var oreDictName as string = enchEntry.name;
+    if (oreDictName.startsWith("piece")){
+        var key as string = oreDictName.substring(5);
+        var piece as IItemStack = enchEntry.firstItem;
+        var ore as IItemStack = oreDict.get("ore" + key).firstItem;
+        if (!isNull(ore) && !isNull(piece)) {recipes.addShaped("piece_to_ore_" + key,ore,[[piece,piece],[piece,piece]]);}
+    }
 }
 
 <ore:itemSoulMixture>.add(<contenttweaker:soul_mixture>);
@@ -92,7 +92,7 @@ recipes.addShapeless("black_quartz1",<actuallyadditions:item_misc:5>,[<minecraft
 <entity:minecraft:witch>.removeDrop(<minecraft:glowstone_dust>);
 
 val allTicTools as IItemStack[] = [
-	<plustic:katana>,
+    <plustic:katana>,
     <plustic:laser_gun>,
     <tconstruct:arrow>,
     <tconstruct:battlesign>,
@@ -118,21 +118,21 @@ val allTicTools as IItemStack[] = [
 ];
 
 for enchTicTool in allTicTools {
-	recipes.addHiddenShapeless(enchTicTool.definition.name ~ "_infinity_three", enchTicTool.withTag({Unbreakable : 1, display: {Lore: ["§d无限 III"]}}), 
-	[<mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>,
-	<minecraft:nether_star>,enchTicTool.marked("t"),<minecraft:nether_star>,
-	<mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>],
-	function (out, input, info) {
-		val data as IData = input.t.tag;
-		val modifiers as string[] = data.Modifiers.asString().split("\\{");
-		for modifier in modifiers {
-			if (modifier.contains("infinity") && modifier.contains("current: 18")) {
-				return input.t.withTag(data + {Unbreakable : 1, display: {Lore: ["§d无限 III"]}});
-			}
-		}
-		return null;
-	},
-	null);
+    recipes.addHiddenShapeless(enchTicTool.definition.name ~ "_infinity_three", enchTicTool.withTag({Unbreakable : 1, display: {Lore: ["§d无限 III"]}}), 
+    [<mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>,
+    <minecraft:nether_star>,enchTicTool.marked("t"),<minecraft:nether_star>,
+    <mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>],
+    function (out, input, info) {
+        val data as IData = input.t.tag;
+        val modifiers as string[] = data.Modifiers.asString().split("\\{");
+        for modifier in modifiers {
+            if (modifier.contains("infinity") && modifier.contains("current: 18")) {
+                return input.t.withTag(data + {Unbreakable : 1, display: {Lore: ["§d无限 III"]}});
+            }
+        }
+        return null;
+    },
+    null);
 }
 
 recipes.addShaped("show_infinity_three",<minecraft:barrier>.withTag({display: {Name: "无法破坏 匠魂工具"}}),
@@ -140,7 +140,7 @@ recipes.addShaped("show_infinity_three",<minecraft:barrier>.withTag({display: {N
 [<minecraft:nether_star>,<minecraft:barrier>.withTag({display: {Name: "任意18/18无限II匠魂工具"}}),<minecraft:nether_star>],
 [<mekanism:basicblock:2>,<mekanism:basicblock:2>,<mekanism:basicblock:2>]],
 function (out, input, info){
-	return null;
+    return null;
 }, null);
 
 mods.actuallyadditions.AtomicReconstructor.addRecipe(<minecraft:coal>, <minecraft:coal:1>, 1000);
