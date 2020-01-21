@@ -32,8 +32,8 @@ recipes.remove(<draconicevolution:crafting_injector>);
 
 
 for i, drone in dr{
-	var saone = sa[i];
-	youyihjLib.recipeTweak(true, drone,[[<ore:ingotDraconium>,<draconicevolution:wyvern_core>,<ore:ingotDraconium>],[<ore:ingotDraconium>,saone,<ore:ingotDraconium>],[<ore:ingotDraconium>,<draconicevolution:wyvern_energy_core>,<ore:ingotDraconium>]]);
+    var saone = sa[i];
+    youyihjLib.recipeTweak(true, drone,[[<ore:ingotDraconium>,<draconicevolution:wyvern_core>,<ore:ingotDraconium>],[<ore:ingotDraconium>,saone,<ore:ingotDraconium>],[<ore:ingotDraconium>,<draconicevolution:wyvern_energy_core>,<ore:ingotDraconium>]]);
 }
 
 mods.thermalexpansion.InductionSmelter.addRecipe(<plustic:osmiridiumingot> * 2, <thermalfoundation:material:135>, <mekanism:ingot:1>, 8000);

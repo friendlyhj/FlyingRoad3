@@ -21,41 +21,41 @@ import mods.contenttweaker.ActionResult;
 
 //定义函数
 function itemCreator(name as string,maxn as int,glow as bool){
-	var itemt = VanillaFactory.createItem(name);
-	itemt.maxStackSize = maxn;
-	itemt.glowing = glow;
-	itemt.register();
+    var itemt = VanillaFactory.createItem(name);
+    itemt.maxStackSize = maxn;
+    itemt.glowing = glow;
+    itemt.register();
 }
 
 function fluidCreator(name as string,color as string,temperature as int,viscosity as int,density as int,luminosity as int,isLava as bool){
-	var fluidt = VanillaFactory.createFluid(name,Color.fromHex(color));
-	fluidt.temperature = temperature; //default 300
-	fluidt.viscosity = viscosity; //default 1000
-	fluidt.density = density; //default 1000
-	fluidt.luminosity = luminosity; //default 0
-	if (isLava) {
-	fluidt.material = <blockmaterial:lava>;
-	fluidt.stillLocation = "base:fluids/molten";
-	fluidt.flowingLocation = "base:fluids/molten_flowing";
-	} else {
-	fluidt.material = <blockmaterial:water>;
-	fluidt.stillLocation = "base:fluids/liquid";
-	fluidt.flowingLocation = "base:fluids/liquid_flow";
-	}
-	fluidt.register();
+    var fluidt = VanillaFactory.createFluid(name,Color.fromHex(color));
+    fluidt.temperature = temperature; //default 300
+    fluidt.viscosity = viscosity; //default 1000
+    fluidt.density = density; //default 1000
+    fluidt.luminosity = luminosity; //default 0
+    if (isLava) {
+    fluidt.material = <blockmaterial:lava>;
+    fluidt.stillLocation = "base:fluids/molten";
+    fluidt.flowingLocation = "base:fluids/molten_flowing";
+    } else {
+    fluidt.material = <blockmaterial:water>;
+    fluidt.stillLocation = "base:fluids/liquid";
+    fluidt.flowingLocation = "base:fluids/liquid_flow";
+    }
+    fluidt.register();
 }
 
 function blockCreator(name as string,blockMaterial as BlockMaterial,hardness as float,resistance as float,blockSoundType as SoundType,lightValue as int,gravity as bool,toolClass as string,toolLevel as int,beaconBase as bool){
-	var blockt = VanillaFactory.createBlock(name,blockMaterial);
-	blockt.setBlockHardness(hardness);
-	blockt.setBlockResistance(resistance);
-	blockt.setBlockSoundType(blockSoundType);
-	blockt.setLightValue(lightValue);
-	blockt.gravity = gravity;
-	blockt.setToolClass(toolClass);
-	blockt.setToolLevel(toolLevel);
-	blockt.beaconBase = beaconBase;
-	blockt.register();
+    var blockt = VanillaFactory.createBlock(name,blockMaterial);
+    blockt.setBlockHardness(hardness);
+    blockt.setBlockResistance(resistance);
+    blockt.setBlockSoundType(blockSoundType);
+    blockt.setLightValue(lightValue);
+    blockt.gravity = gravity;
+    blockt.setToolClass(toolClass);
+    blockt.setToolLevel(toolLevel);
+    blockt.beaconBase = beaconBase;
+    blockt.register();
 }
 
 
@@ -70,9 +70,9 @@ urban_legend.color = 0xFFFFFF;
 urban_legend.localizedName = (game.localize("contenttweaker.trait.urban_legend.name"));
 urban_legend.localizedDescription = ("§o" + game.localize("contenttweaker.trait.urban_legend.description1") + "§r\n§f" + game.localize("contenttweaker.trait.urban_legend.description2"));
 urban_legend.calcDamage = function(trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-	if (target.definition.id == "minecraft:enderman"){
-		return (originalDamage + target.health);
-	} else return newDamage;
+    if (target.definition.id == "minecraft:enderman"){
+        return (originalDamage + target.health);
+    } else return newDamage;
 };
 urban_legend.register();
 
@@ -91,12 +91,11 @@ w_ender_pearl.register();
 
 val bat = VanillaFactory.createItem("forestbat");
 bat.onItemUse = function(player, world, pos, hand, facing, blockHit) {
-	if (!world.remote) {
-    	player.getHeldItem(hand).shrink(1);
-		<entity:minecraft:bat>.spawnEntity(world, pos.getOffset("up", 1));
-		player.sendMessage("新人请说出常用模组");
-    	return ActionResult.success();
-	}
-	return ActionResult.pass();
+    if (!world.remote) {
+        player.getHeldItem(hand).shrink(1);
+        <entity:minecraft:bat>.spawnEntity(world, pos.getOffset("up", 1));
+        player.sendMessage("新人请说出常用模组");
+    }
+    return ActionResult.success();
 };
 bat.register();

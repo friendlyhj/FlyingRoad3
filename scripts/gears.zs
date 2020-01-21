@@ -15,56 +15,56 @@ import crafttweaker.oredict.IOreDict;
 
 //function
 function isEqualOr(a as int,b as int[]) as bool{
-	for j in b{
-		if (a == j){
-			return true;
-		}
-	}
-	return false;
+    for j in b{
+        if (a == j){
+            return true;
+        }
+    }
+    return false;
 }
 
 function rodSupplier(ore as IOreDictEntry) as IIngredient {
-	var key as string = youyihjLib.getMetalName(ore);
-	var snakeKey as string = youyihjLib.toSnakeCase(key);
-	if (snakeKey == "platinum"||snakeKey == "signalum"||snakeKey == "lumium"||snakeKey == "enderium"||snakeKey == "mithril"){
-		snakeKey ~= "_plustic";
-	}
-	var rodOre as IOreDictEntry = oreDict.get("rod" ~ key);
-	var ticRod as IItemStack = <tconstruct:tool_rod>.withTag({Material : snakeKey});
-	if (rodOre.empty) {
-		return ticRod;
-	} else if (snakeKey.contains("alum") || snakeKey.contains("tin") || snakeKey.contains("gold")) {
-		return rodOre;
-	} else return ticRod.or(rodOre);
+    var key as string = youyihjLib.getMetalName(ore);
+    var snakeKey as string = youyihjLib.toSnakeCase(key);
+    if (snakeKey == "platinum"||snakeKey == "signalum"||snakeKey == "lumium"||snakeKey == "enderium"||snakeKey == "mithril"){
+        snakeKey ~= "_plustic";
+    }
+    var rodOre as IOreDictEntry = oreDict.get("rod" ~ key);
+    var ticRod as IItemStack = <tconstruct:tool_rod>.withTag({Material : snakeKey});
+    if (rodOre.empty) {
+        return ticRod;
+    } else if (snakeKey.contains("alum") || snakeKey.contains("tin") || snakeKey.contains("gold")) {
+        return rodOre;
+    } else return ticRod.or(rodOre);
 }
 
 val ga as IOreDictEntry = <ore:gearStone>;
 for ench in oreDict.entries {
-	var key as string = youyihjLib.getMetalNameNew(ench, "gear");
-	if (!isNull(key)) {
-		var gear as IItemStack = ench.firstItem;
-		var ingot as IOreDictEntry = oreDict.get("ingot" ~ key);
-		var rod as IIngredient = rodSupplier(ench);
-		if (key == "DarkSteel") {
-			rod = <tconstruct:tool_rod>.withTag({Material: "dark_steel"});
-		}
-		var nugget as IIngredient = oreDict.get("nugget" ~ key);
-			if (!ingot.empty && ingot.firstItem.definition.owner != "draconicevolution" && ingot.firstItem.definition.owner != "bigreactors") {
-				if (!key.contains("Alum")) {
-					mods.thermalexpansion.Compactor.removeGearRecipe(ingot.firstItem);
-				}
-				if (!key.contains("Aluminum")) {
-					youyihjLib.recipeTweak(true, gear, [
-						[rod,ingot,rod],
-						[ingot,ga,ingot],
-						[rod,ingot,rod]
-					]);
-				}
-			mods.immersiveengineering.MetalPress.removeRecipe(gear);
-			mods.tconstruct.Casting.removeTableRecipe(gear);
-			mods.immersiveengineering.MetalPress.addRecipe(gear,ingot,<immersiveengineering:mold:1>,16000,6);
-		}
-	}
+    var key as string = youyihjLib.getMetalNameNew(ench, "gear");
+    if (!isNull(key)) {
+        var gear as IItemStack = ench.firstItem;
+        var ingot as IOreDictEntry = oreDict.get("ingot" ~ key);
+        var rod as IIngredient = rodSupplier(ench);
+        if (key == "DarkSteel") {
+            rod = <tconstruct:tool_rod>.withTag({Material: "dark_steel"});
+        }
+        var nugget as IIngredient = oreDict.get("nugget" ~ key);
+            if (!ingot.empty && ingot.firstItem.definition.owner != "draconicevolution" && ingot.firstItem.definition.owner != "bigreactors") {
+                if (!key.contains("Alum")) {
+                    mods.thermalexpansion.Compactor.removeGearRecipe(ingot.firstItem);
+                }
+                if (!key.contains("Aluminum")) {
+                    youyihjLib.recipeTweak(true, gear, [
+                        [rod,ingot,rod],
+                        [ingot,ga,ingot],
+                        [rod,ingot,rod]
+                    ]);
+                }
+            mods.immersiveengineering.MetalPress.removeRecipe(gear);
+            mods.tconstruct.Casting.removeTableRecipe(gear);
+            mods.immersiveengineering.MetalPress.addRecipe(gear,ingot,<immersiveengineering:mold:1>,16000,6);
+        }
+    }
 }
 
 
@@ -98,7 +98,7 @@ var allJAOPCArod = [
 <jaopca:item_stickquartz>,
 <jaopca:item_stickquartzblack>] as IItemStack[];
 for i, enchJAOPCArod in allJAOPCArod{
-	recipes.remove(enchJAOPCArod);
+    recipes.remove(enchJAOPCArod);
 }
 
 //rodmachineIO
@@ -153,12 +153,12 @@ var allNugget = [
 <immersiveengineering:metal:26>] as IItemStack[];
 
 for i, enchRod in allRod{
-	var enchNugget = allNugget[i];
-	if (isEqualOr(i,[6,7,12,13,14,15,16,20,21])){
-	mods.thermalexpansion.Compactor.addPressRecipe(enchRod, enchNugget * 5, 3000);
-	} else {
-	mods.thermalexpansion.Compactor.addPressRecipe(enchRod, enchNugget * 5, 2000);
-	}
+    var enchNugget = allNugget[i];
+    if (isEqualOr(i,[6,7,12,13,14,15,16,20,21])){
+    mods.thermalexpansion.Compactor.addPressRecipe(enchRod, enchNugget * 5, 3000);
+    } else {
+    mods.thermalexpansion.Compactor.addPressRecipe(enchRod, enchNugget * 5, 2000);
+    }
 }	
 
 mods.tconstruct.Casting.addTableRecipe(<immersiveengineering:material:3>,<tconstruct:cast>.withTag({PartType: "tconstruct:tool_rod"}),<liquid:aluminum>, 144, false, 30);
@@ -198,13 +198,13 @@ var iePart = [
 
 
 for i in 0 to 5{
-	mods.immersiveengineering.Blueprint.removeRecipe(ieMold.makeStack(i));
-	var iePartInFor = iePart[i];
-	if (i != 1){
-		mods.tconstruct.Casting.addTableRecipe(ieMold.makeStack(i),iePartInFor,<liquid:steel>,1440,true,1200);
-	} else {
-		recipes.addShaped(ieMold.makeStack(i),[[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>],[<immersiveengineering:mold>,<mekanism:basicblock:2>,<immersiveengineering:mold>],[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>]]);
-	}
+    mods.immersiveengineering.Blueprint.removeRecipe(ieMold.makeStack(i));
+    var iePartInFor = iePart[i];
+    if (i != 1){
+        mods.tconstruct.Casting.addTableRecipe(ieMold.makeStack(i),iePartInFor,<liquid:steel>,1440,true,1200);
+    } else {
+        recipes.addShaped(ieMold.makeStack(i),[[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>],[<immersiveengineering:mold>,<mekanism:basicblock:2>,<immersiveengineering:mold>],[<immersiveengineering:mold:2>,<immersiveengineering:mold>,<immersiveengineering:mold:2>]]);
+    }
 }
 
 recipes.addShaped(<immersiveengineering:metal_decoration1:1> * 6,[[<ore:ingotSteel>,<ore:ingotSteel>,<ore:ingotSteel>],[null,<tconstruct:tool_rod>.withTag({Material: "steel"}).onlyWithTag({Material: "steel"}),null],[<tconstruct:tool_rod>.withTag({Material: "steel"}).onlyWithTag({Material: "steel"}),null,<tconstruct:tool_rod>.withTag({Material: "steel"}).onlyWithTag({Material: "steel"})]]);
