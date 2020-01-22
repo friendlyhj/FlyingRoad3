@@ -49,6 +49,7 @@ recipes.addShaped(<actuallyadditions:block_tiny_torch> * 4,[[<contenttweaker:tin
 furnace.setFuel(<contenttweaker:tiny_coal_coke>, 400);
 recipes.addShapeless(<actuallyadditions:item_misc:5> * 4,[<ore:blockQuartzBlack>]);
 mods.actuallyadditions.Empowerer.addRecipe(<contenttweaker:forestbat>,<minecraft:apple>,<minecraft:dye:14>,<minecraft:dye:14>,<minecraft:dye:14>,<minecraft:torch>,150,40);
+recipes.remove(<extrautils2:angelring:*>);
 
 recipes.addShapeless("envil_drop",<extrautils2:ingredients:10>,[<darkutils:material>,<minecraft:clay_ball>,<ore:dustCoal>|<ore:dustCharcoal>]);
 
