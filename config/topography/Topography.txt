@@ -1,0 +1,24 @@
+//If this file is deleted, a new set of default configs will be generated.
+
+//Sets if the mod should print documentation.
+printDocumentation(false)
+
+//Sets the Topography WorldType as default
+setAsDefaultWorldType()
+
+//Registers a preset. First argument is name, second is the image name, third is a description, fourth is WorldType, fifth is generator options Json.
+
+flyingRoadClassic = registerPreset("飞翔之路 经典", "images/classic", "经典的飞翔之路空岛")
+flyingRoadClassic.registerDimension(0, "maps/flying_road_classic")
+
+flyingRoadGreen = registerPreset("飞翔之路 绿化", "images/green", "飞翔之路空岛的变种")
+flyingRoadGreen.registerDimension(0, "maps/flying_road_green")
+
+glassBall = registerPreset("水晶球", "images/glass_ball", "...")
+glassBall.registerDimension(0, "maps/glass_ball");
+
+sea = registerPreset("荒芜之海", "images/sea", "...")
+sea.registerDimension(0, "maps/sea")
+
+singleChest = registerPreset("一箱一世界", "images/chest", "...")
+singleChest.registerDimension(0, "maps/single_chest")
