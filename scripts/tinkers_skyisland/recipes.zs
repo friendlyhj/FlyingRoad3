@@ -82,6 +82,7 @@ Casting.addBasinRecipe(<minecraft:end_stone>,<ore:cobblestone>,<liquid:ender>, 1
 Casting.addBasinRecipe(<minecraft:soul_sand>,null,<liquid:soulsand>, 80, false, 20);
 Casting.addTableRecipe(<contenttweaker:nether_ingot>,<tconstruct:cast_custom>,<liquid:nether_essential>, 60, false, 40);
 Melting.addRecipe(<liquid:nether_essential> * 60,<contenttweaker:nether_ingot>,480);
+Casting.addBasinRecipe(<minecraft:sponge:1>, <minecraft:hay_block>, <liquid:water>, 12000, true, 200);
 
 recipes.addShapeless("black_quartz",<actuallyadditions:item_misc:5>,[<minecraft:quartz>,<ore:dustCoal>]);
 recipes.addShapeless("black_quartz1",<actuallyadditions:item_misc:5>,[<minecraft:quartz>,<ore:dustCharcoal>]);
