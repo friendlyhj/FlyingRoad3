@@ -1,5 +1,5 @@
 //Sets the spawn structure at y 60
-setSpawnStructure("basic tree", 60)
+setSpawnStructure("basic_tree", 60)
 
 //Creates a new LayerGenerator and saves it as a variable
 layers = new LayerGenerator()
