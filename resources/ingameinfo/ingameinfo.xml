@@ -19,7 +19,7 @@
             </if>
         </line>
 		<line>
-			<str>坐标: X = {xi} Y = {yi} Z = {zi}</str>
+			<str>坐标: ({x}, {y}, {z})</str>
 		</line>
         <line>
             <str>亮度: </str>
@@ -138,6 +138,17 @@
         </line>
         <line>
             <str> </str>
+        </line>
+    </lines>
+    <lines at="topright">
+        <line>
+            <str>飞翔之路3</str>
+        </line>
+        <line>
+            <str>$cTinkers' Skyisland</str>
+        </line>
+        <line>
+            <str>$eMultiMap</str>
         </line>
     </lines>
     <lines at="bottomright">
