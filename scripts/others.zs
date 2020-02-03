@@ -95,3 +95,6 @@ youyihjLib.recipeTweak(true, <rf-capability-adapter:aecapabilityadapter>,[
     [<rf-capability-adapter:aecapabilityadapter_part>,<appliedenergistics2:part:76>,<rf-capability-adapter:aecapabilityadapter_part>],
     [<ore:ingotAluminum>,<rf-capability-adapter:aecapabilityadapter_part>,<ore:ingotAluminum>]
 ]);
+
+mods.mekanism.GasConversion.unregister(<minecraft:flint>, <gas:oxygen>);
+mods.mekanism.GasConversion.unregister(<ore:dustSalt>, <gas:hydrogenchloride>);
