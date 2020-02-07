@@ -1,4 +1,5 @@
 #modloaded bathappymod
+#ikwid
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.oredict.IOreDict;
@@ -62,7 +63,7 @@ Casting.addTableRecipe(<contenttweaker:aquamarinec>,<contenttweaker:aquamarine>,
 Casting.addTableRecipe(<minecraft:slime_ball>,<minecraft:magma_cream>,<liquid:water>,2500,true,100);
 mods.mekanism.GasConversion.register(<contenttweaker:soul_mixture>, <gas:soul> * 200);
 mods.mekanism.chemical.injection.addRecipe(<minecraft:sand>, <gas:soul>, <minecraft:soul_sand>);
-Melting.addRecipe(<liquid:soulsand> * 80,<minecraft:soul_sand>, 140);
+Melting.addRecipe(<liquid:soulsand> * 80,<minecraft:soul_sand>, 320);
 Alloy.addRecipe(<liquid:nether_essential> * 120,[<liquid:iron> * 32, <liquid:soulsand> * 40, <liquid:blood> * 80]);
 Casting.addTableRecipe(<minecraft:blaze_rod>,<tconstruct:cast>.withTag({PartType: "tconstruct:tough_tool_rod"}),<liquid:nether_essential>, 960, false, 200);
 Casting.addBasinRecipe(<minecraft:netherrack>,<ore:cobblestone>,<liquid:nether_essential>, 60, true, 20);
@@ -145,3 +146,5 @@ function (out, input, info){
 }, null);
 
 mods.actuallyadditions.AtomicReconstructor.addRecipe(<minecraft:coal>, <minecraft:coal:1>, 1000);
+
+mods.thermalexpansion.Crucible.addRecipe(<liquid:nether_essential> * 60, <contenttweaker:nether_ingot>, 4000);
