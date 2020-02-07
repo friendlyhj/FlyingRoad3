@@ -14,7 +14,7 @@
           "visibility:8": "NORMAL",
           "simultaneous:1": 0,
           "icon:10": {
-            "id:8": "minecraft:log",
+            "id:8": "minecraft:grass",
             "Count:3": 1,
             "Damage:2": 0,
             "OreDict:8": ""
@@ -25,8 +25,8 @@
           "snd_update:8": "minecraft:entity.player.levelup",
           "autoclaim:1": 0,
           "ismain:1": 0,
-          "name:8": "收集木头",
-          "desc:8": "木头永远是最重要的！"
+          "name:8": "This is Minecraft",
+          "desc:8": "用你的方式获取树苗"
         }
       },
       "tasks:9": {
@@ -39,9 +39,9 @@
           "consume:1": 0,
           "requiredItems:9": {
             "0:10": {
-              "id:8": "minecraft:log",
-              "Count:3": 8,
-              "OreDict:8": "logWood",
+              "id:8": "minecraft:sapling",
+              "Count:3": 1,
+              "OreDict:8": "",
               "Damage:3": 0
             }
           },
@@ -54,20 +54,8 @@
           "index:3": 0,
           "rewards:9": {
             "0:10": {
-              "id:8": "minecraft:dirt",
-              "Count:3": 6,
-              "OreDict:8": "",
-              "Damage:3": 0
-            },
-            "1:10": {
               "id:8": "minecraft:apple",
               "Count:3": 4,
-              "OreDict:8": "",
-              "Damage:3": 0
-            },
-            "2:10": {
-              "id:8": "minecraft:sapling",
-              "Count:3": 1,
               "OreDict:8": "",
               "Damage:3": 0
             }
@@ -138,6 +126,18 @@
             "1:10": {
               "id:8": "minecraft:string",
               "Count:3": 4,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "2:10": {
+              "id:8": "minecraft:torch",
+              "Count:3": 18,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "3:10": {
+              "id:8": "minecraft:dirt",
+              "Count:3": 1,
               "OreDict:8": "",
               "Damage:3": 0
             }
@@ -1098,10 +1098,10 @@
           "consume:1": 0,
           "requiredItems:9": {
             "0:10": {
-              "id:8": "contenttweaker:material_part",
+              "id:8": "contenttweaker:cobalt_piece",
               "Count:3": 4,
               "OreDict:8": "pieceCobalt",
-              "Damage:3": 5
+              "Damage:3": 0
             }
           },
           "taskID:8": "bq_standard:retrieval"
@@ -3184,7 +3184,7 @@
           "groupDetect:1": 0,
           "ignoreNBT:1": 0,
           "index:3": 0,
-          "consume:1": 1,
+          "consume:1": 0,
           "requiredItems:9": {
             "0:10": {
               "id:8": "extrautils2:ingredients",
@@ -6177,7 +6177,7 @@
           "autoclaim:1": 0,
           "ismain:1": 0,
           "name:8": "小试牛刀",
-          "desc:8": "先做个简单的种子"
+          "desc:8": "合成种子是用来合成其他种子的\n\n\n§c§l魔改内容：极其重要！本整合对神秘农业种子的合成种类有限制，默认你只能合成12种不同类型的种子。自动合成机器不可以合成种子（可能只消耗材料但不给成品）。\n可以用/gamerule amountSeedsCouldCraft [数量]  指令来修改种类限制。设置为0即为取消合成种类限制。"
         }
       },
       "tasks:9": {
@@ -6190,10 +6190,10 @@
           "consume:1": 0,
           "requiredItems:9": {
             "0:10": {
-              "id:8": "mysticalagriculture:tier1_inferium_seeds",
+              "id:8": "mysticalagriculture:crafting",
               "Count:3": 1,
               "OreDict:8": "",
-              "Damage:3": 0
+              "Damage:3": 17
             }
           },
           "taskID:8": "bq_standard:retrieval"
@@ -6701,9 +6701,9 @@
           "visibility:8": "NORMAL",
           "simultaneous:1": 0,
           "icon:10": {
-            "id:8": "mysticalagriculture:watering_can",
+            "id:8": "mysticalagriculture:growth_accelerator",
             "Count:3": 1,
-            "Damage:2": 4,
+            "Damage:2": 0,
             "OreDict:8": ""
           },
           "globalshare:1": 0,
@@ -6713,7 +6713,7 @@
           "autoclaim:1": 0,
           "ismain:1": 0,
           "name:8": "生长加速",
-          "desc:8": "大大加快植物的生长\n§c然而你没有设备可以自动使用它，建议使用温室玻璃+生长加速器组合"
+          "desc:8": "将这个放在耕地下，可以加快其上植物的生长，最多可以放一组。\n§c然而你没有设备可以自动使用它，建议使用温室玻璃+生长加速器组合"
         }
       },
       "tasks:9": {
@@ -6726,10 +6726,10 @@
           "consume:1": 0,
           "requiredItems:9": {
             "0:10": {
-              "id:8": "mysticalagriculture:watering_can",
-              "Count:3": 1,
+              "id:8": "mysticalagriculture:growth_accelerator",
+              "Count:3": 16,
               "OreDict:8": "",
-              "Damage:3": 4
+              "Damage:3": 0
             }
           },
           "taskID:8": "bq_standard:retrieval"
@@ -8184,7 +8184,8 @@
         113,
         115,
         121,
-        64
+        64,
+        148
       ],
       "properties:10": {
         "betterquesting:10": {
@@ -8662,6 +8663,12 @@
             "0:10": {
               "id:8": "minecraft:gold_block",
               "Count:3": 48,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "1:10": {
+              "id:8": "betterquesting:submit_station",
+              "Count:3": 1,
               "OreDict:8": "",
               "Damage:3": 0
             }
@@ -10693,6 +10700,67 @@
         }
       },
       "rewards:9": {}
+    },
+    "148:10": {
+      "questID:3": 148,
+      "preRequisites:11": [
+        121
+      ],
+      "properties:10": {
+        "betterquesting:10": {
+          "issilent:1": 0,
+          "snd_complete:8": "minecraft:entity.player.levelup",
+          "lockedprogress:1": 0,
+          "tasklogic:8": "AND",
+          "repeattime:3": -1,
+          "visibility:8": "NORMAL",
+          "simultaneous:1": 0,
+          "icon:10": {
+            "id:8": "actuallyadditions:item_misc",
+            "Count:3": 1,
+            "Damage:2": 24,
+            "OreDict:8": ""
+          },
+          "globalshare:1": 0,
+          "questlogic:8": "AND",
+          "partysinglereward:1": 0,
+          "snd_update:8": "minecraft:entity.player.levelup",
+          "autoclaim:1": 0,
+          "ismain:1": 1,
+          "name:8": "自动化实践：充能油",
+          "desc:8": "AA提供的油菜发电效率不错。\n需要任务提交站，在其GUI绑定该任务后，向其用管道输入128桶充能油以完成该任务。"
+        }
+      },
+      "tasks:9": {
+        "0:10": {
+          "autoConsume:1": 0,
+          "groupDetect:1": 0,
+          "requiredFluids:9": {
+            "0:10": {
+              "FluidName:8": "empoweredoil",
+              "Amount:3": 128000
+            }
+          },
+          "ignoreNBT:1": 0,
+          "index:3": 0,
+          "consume:1": 1,
+          "taskID:8": "bq_standard:fluid"
+        }
+      },
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "actuallyadditions:block_oil_generator",
+              "Count:3": 4,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          }
+        }
+      }
     }
   },
   "questLines:9": {
@@ -11824,6 +11892,13 @@
           "y:3": 78,
           "id:3": 147,
           "sizeY:3": 24
+        },
+        "9:10": {
+          "sizeX:3": 24,
+          "x:3": -72,
+          "y:3": 172,
+          "id:3": 148,
+          "sizeY:3": 24
         }
       },
       "lineID:3": 6,
@@ -11883,9 +11958,9 @@
         },
         "5:10": {
           "sizeX:3": 24,
-          "x:3": -42,
+          "x:3": -44,
           "y:3": 180,
-          "id:3": 121,
+          "id:3": 148,
           "sizeY:3": 24
         }
       },
