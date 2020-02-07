@@ -1,4 +1,5 @@
 #modloaded bathappymod
+#ikwid
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 
@@ -98,3 +99,13 @@ youyihjLib.recipeTweak(true, <rf-capability-adapter:aecapabilityadapter>,[
 
 mods.mekanism.GasConversion.unregister(<minecraft:flint>, <gas:oxygen>);
 mods.mekanism.GasConversion.unregister(<ore:dustSalt>, <gas:hydrogenchloride>);
+
+mods.tconstruct.Fuel.registerFuel(<liquid:pyrotheum> * 10, 2800);
+mods.tconstruct.Melting.removeRecipe(<liquid:iron>, <minecraft:detector_rail>);
+mods.tconstruct.Melting.removeRecipe(<liquid:iron>, <minecraft:rail>);
+mods.tconstruct.Melting.removeRecipe(<liquid:osmium>, <minecraft:rail>);
+mods.tconstruct.Melting.removeRecipe(<liquid:iron>, <minecraft:activator_rail>);
+mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <minecraft:golden_rail>);
+
+mods.thermalexpansion.InductionSmelter.removeRecipe(<minecraft:sand>, <minecraft:rail>);
+mods.thermalexpansion.InductionSmelter.removeRecipe(<minecraft:sand>, <minecraft:golden_rail>);
