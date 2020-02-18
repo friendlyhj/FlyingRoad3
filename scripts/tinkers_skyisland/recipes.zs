@@ -1,6 +1,5 @@
 #modloaded bathappymod
 #ikwid
-#test?
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.oredict.IOreDict;
@@ -88,6 +87,12 @@ Casting.addBasinRecipe(<minecraft:sponge:1>, <minecraft:hay_block>, <liquid:wate
 
 recipes.addShapeless("black_quartz",<actuallyadditions:item_misc:5>,[<minecraft:quartz>,<ore:dustCoal>]);
 recipes.addShapeless("black_quartz1",<actuallyadditions:item_misc:5>,[<minecraft:quartz>,<ore:dustCharcoal>]);
+
+recipes.addShapeless("tinkers_skyisland_guidebook", <patchouli:guide_book>.withTag({"patchouli:book": "patchouli:tinkers_skyisland"}),
+[<tconstruct:book>.reuse(),<ore:treeSapling>]);
+
+recipes.addShapeless("tconsruct_guidebook", <tconstruct:book>,
+[<patchouli:guide_book>.withTag({"patchouli:book": "patchouli:tinkers_skyisland"}), <tconstruct:pattern>]);
 
 <entity:minecraft:skeleton>.addPlayerOnlyDrop(<minecraft:skull:1>.weight(0.015));
 <entity:minecraft:zombie>.removeDrop(<minecraft:iron_ingot>);
