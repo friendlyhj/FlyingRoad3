@@ -1,0 +1,16 @@
+{
+    "name": "钴强化海蓝宝石",
+    "icon": "contenttweaker:aquamarinec",
+    "category": "items",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "contenttweaker:aquamarinec",
+            "text": "只用作匠魂材料，$(l:cobalt_aqu_material)点此跳转。$(/l)"
+        },
+        {
+            "type": "text",
+            "text": "1锭量(144mB)的熔融钴在浇筑台上浇筑$(l:aqu)海蓝宝石$(/l)而得。"
+        }
+    ]
+}

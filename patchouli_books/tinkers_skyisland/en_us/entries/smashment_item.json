@@ -1,0 +1,15 @@
+{
+    "name": "粉碎强化大板",
+    "icon": "contenttweaker:smashment",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "给匠魂工具强化，可使其增加$(l:smashment)探矿$(/l)强化"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:smashment"
+        }
+    ]
+}

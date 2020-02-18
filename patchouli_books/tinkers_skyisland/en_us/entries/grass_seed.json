@@ -1,0 +1,15 @@
+{
+    "name": "草籽",
+    "icon": "contenttweaker:grass_seed",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "手持草籽右键泥土，将其变为$(4)草方块$()"
+        },
+        {
+            "type": "text",
+            "text": "$(l:vibrant)点我跳转至获取途径$(/l)"
+        }
+    ]
+}

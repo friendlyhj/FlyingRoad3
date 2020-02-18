@@ -1,0 +1,15 @@
+{
+    "name": "探矿者水晶",
+    "icon": "contenttweaker:orement",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "给匠魂工具强化，可使其增加$(l:orement)探矿$(/l)属性"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:orement"
+        }
+    ]
+}

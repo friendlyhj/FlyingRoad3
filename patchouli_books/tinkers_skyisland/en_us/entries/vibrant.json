@@ -1,0 +1,15 @@
+{
+    "name": "生机",
+    "category": "traits",
+    "icon": "contenttweaker:plant_matter",
+    "pages": [
+        {
+            "type": "text",
+            "text": "将$(l:plant_matter_material)自然物质$(/l)作为工具手柄，工具将有此属性。"
+        },
+        {
+            "type": "text",
+            "text": "使用该工具挖掘方块有几率额外掉落以下种子$(br2)$(li)$(l)5% 小麦种子$()$(li)3% 草籽$(li)2% 甘蔗$(li)0.5% 南瓜种子$(li)0.5% 西瓜种子$(li)0.3% 可可豆$(li)0.2% 仙人掌"
+        }
+    ]
+}

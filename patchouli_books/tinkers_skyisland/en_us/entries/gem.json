@@ -1,0 +1,19 @@
+{
+    "name": "宝石校准",
+    "category": "traits",
+    "icon": "contenttweaker:aquamarinec",
+    "pages": [
+        {
+            "type": "text",
+            "text": "将$(l:cobalt_aqu_material)钴强化海蓝宝石$(/l)作为工具顶端或绑定节，工具将有此属性。"
+        },
+        {
+            "type": "text",
+            "text": "使用该工具挖掘石头掉落以下物品及概率$(br2)$(li)18% 红石$(li)8% 荧石粉$(li)6% 青金石$(li)6% 赛特斯石英$(li)1% 钻石$(li)1% 绿宝石$(li)9% 基岩粉$(li)1% 陨石粉"
+        },
+        {
+            "type": "text",
+            "text": "宝石校准与时运兼容。时运I掉落矿几率提升10%，II级为30%，III为50%。"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "凋灵骷髅头",
+    "icon": "minecraft:skull:1",
+    "category": "items",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "minecraft:skull:1",
+            "text": "普通骷髅在被玩家杀死后有1.5%几率掉落凋灵骷髅头。你可以使用$(c)玩家陷阱$()或$(c)钻石锥刺方块$()自动杀怪（会掉落只有玩家击杀才会掉落的物品）。"
+        }
+    ]
+}

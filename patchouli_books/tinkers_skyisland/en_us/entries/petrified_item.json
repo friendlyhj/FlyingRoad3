@@ -1,0 +1,15 @@
+{
+    "name": "火药浸渍骨头",
+    "icon": "contenttweaker:gunpower_in_bone",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "给匠魂工具强化，可使其增加$(l:petrified)石化$(/l)强化"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:gunpowder_bone"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "name": "黑曜石金材料",
+    "icon": "contenttweaker:gildediron",
+    "category": "materials",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "contenttweaker:gildediron",
+            "text": "$(l:obgold)黑曜石金$(/l)匠魂材料，需要使用熔融黑曜石金浇筑部件。"
+        },
+        {
+            "type": "text",
+            "text": "作为工具顶端 $(br2)$(li)耐久：198$(li)挖掘等级：钻石$(li)挖掘速度：8$(li)攻击力：3.4$(li)具有特性：$(l:soul)摄魂$(/l)"
+        },
+        {
+            "type": "text",
+            "text": "作为工具手柄 $(br2)$(li)手柄系数：0.85$(li)耐久：80$(li)具有特性：磁力"
+        },
+        {
+            "type": "text",
+            "text": "作为工具其他部件（如绑定节）$(br2)$(li)耐久：40$(li)具有特性：磁力"
+        }
+    ]
+}

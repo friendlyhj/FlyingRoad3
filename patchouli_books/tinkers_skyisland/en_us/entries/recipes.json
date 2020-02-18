@@ -1,0 +1,25 @@
+{
+    "name": "配方",
+    "icon": "minecraft:crafting_table",
+    "category": "items",
+    "pages": [
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:black_quartz",
+            "recipe2": "crafttweaker:black_quartz1"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:envil_drop",
+            "recipe2": "crafttweaker:tic_food"
+        },
+        {
+            "type": "text",
+            "text": "$(l)浇筑盆合成$()$(br2)$(li)2000mB熔岩+陨石粉=陨石$(li)8000mB水+泥土=绿色史莱姆泥土"
+        },
+        {
+            "type": "text",
+            "text": "原子再构机可以把木炭转换为煤炭。"
+        }
+    ]
+}

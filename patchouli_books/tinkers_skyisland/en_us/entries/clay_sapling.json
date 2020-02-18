@@ -1,0 +1,11 @@
+{
+    "name": "粘土浸渍树苗",
+    "icon": "contenttweaker:clay_sapling",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "制作史莱姆树苗的中间体，将10份(1440mB)量的熔融粘土在浇筑台上浇筑任意树苗获得。再在晾干架挂10分钟后变成绿色史莱姆树苗"
+        }
+    ]
+}

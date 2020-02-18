@@ -1,0 +1,15 @@
+{
+    "name": "摄魂",
+    "category": "traits",
+    "icon": "minecraft:soul_sand",
+    "pages": [
+        {
+            "type": "text",
+            "text": "将$(l:obgold_material)黑曜石金$(/l)作为工具顶端，工具将有此属性。"
+        },
+        {
+            "type": "text",
+            "text": "杀死怪物后，若副手拿着沙子，取其中1~4个转换为$(4)灵魂沙$()"
+        }
+    ]
+}

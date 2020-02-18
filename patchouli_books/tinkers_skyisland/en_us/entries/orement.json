@@ -1,0 +1,36 @@
+{
+    "name": "探矿",
+    "category": "traits",
+    "icon": "contenttweaker:orement",
+    "pages": [
+        {
+            "type": "text",
+            "text": "用$(l:orement_item)探矿者水晶$(/l)给工具强化，工具将有此属性。使用10个探矿者水晶可将探矿属性升至II级"
+        },
+        {
+            "type": "text",
+            "text": "使用该工具挖掘沙砾掉落以下矿物碎片及概率$(br2)$(li)20% 铁$(li)12% 金$(li)17.5% 铜$(li)14.5% 锡$(li)12% 铝$(li)12% 铅$(li)12.5% 银$(li)14% 镍$(li)13% 锇$(li)1% 黄铀$(li)0.8% 铂$(li)0.5% 铱"
+        },
+        {
+            "type": "text",
+            "text": "使用该工具挖掘地狱岩掉落以下矿物碎片及概率$(br2)$(li)20% 钴$(li)14% 阿迪特"
+        },
+        {
+            "type": "text",
+            "text": "四个矿物碎片可以合成对应原矿。"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:piece_to_ore_iron",
+            "recipe2": "crafttweaker:piece_to_ore_gold"
+        },
+        {
+            "type": "text",
+            "text": "探矿II级可以使用压缩沙砾和压缩地狱岩，但产量只相当于沙砾、地狱岩的7倍。"
+        },
+        {
+            "type": "text",
+            "text": "探矿与时运兼容。时运I掉落矿几率提升10%，II级为30%，III为50%。但是探矿挖沙砾，掉落矿物的事件在挖沙砾不出燧石还是沙砾时才触发。而原版时运会加大挖沙砾掉燧石的几率。所以挖沙砾I级实际为降低为94.6%，II级降低为97.5%，III级就只出燧石不出矿了。为了避免这种情况，你需要升级为探矿II挖掘压缩沙砾。"
+        }
+    ]
+}

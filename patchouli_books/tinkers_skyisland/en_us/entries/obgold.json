@@ -1,0 +1,20 @@
+{
+    "name": "黑曜石金",
+    "icon": "contenttweaker:gildediron",
+    "category": "items",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "contenttweaker:gildediron",
+            "text": "$(br)只用作匠魂材料，$(l:obgold_material)点此跳转。$(/l)"
+        },
+        {
+            "type": "text",
+            "text": "由匠魂炉中$(l:obsidian)黑曜石$(/l)：金 = 1:1合金而得"
+        },
+        {
+            "type": "text",
+            "text": "$(l)你知道吗$()$(br2)$(li)黑曜石金只有锭的形式，没有粒和块$(li)黑曜石金锭的物品ID是镀金铁的意思。"
+        }
+    ]
+}

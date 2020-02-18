@@ -1,0 +1,20 @@
+{
+    "name": "木漏斗",
+    "icon": "tconstruct:wooden_hopper",
+    "category": "tools",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "tconstruct:wooden_hopper",
+            "text": "更慢，更便宜的漏斗替代物。内部仅有一格的缓存空间。"
+        },
+        {
+            "type": "crafting",
+            "recipe": "tconstruct:gadgets/wooden_hopper"
+        },
+        {
+            "type": "text",
+            "text": "$(l)你知道吗？$()$(br2)木漏斗原来是匠魂空岛(Tinkers Skyblock)模组的内容，后来被移到匠魂本体中。"
+        }
+    ]
+}

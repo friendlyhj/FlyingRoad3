@@ -1,0 +1,16 @@
+{
+    "name": "熔化工具",
+    "icon": "contenttweaker:wheat_melt",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "手持熔化工具持续右键（其实长按就成，你非要用鼠标宏也行）圆石可将其转换为熔岩。$(br)小麦熔化工具：前期用，需要右键50次，一次性使用。$(br)烈焰熔化工具：比较昂贵，右键10次即可，更高效。而且可以使用120次。"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:wheat_melt",
+            "recipe2": "crafttweaker:blaze_melt"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "黑曜石",
+    "category": "items",
+    "icon": "minecraft:obsidian",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "minecraft:obsidian",
+            "text": "由水和岩浆混合而成的坚硬岩石。"
+        },
+        {
+            "type": "text",
+            "text": "前期可用水桶和熔岩桶右键$(c)冶炼炉排液口$()（不是浇筑口！）来向冶炼炉倒水和熔岩。水和熔岩可以在冶炼炉里变成熔融黑曜石。"
+        }
+    ]
+}

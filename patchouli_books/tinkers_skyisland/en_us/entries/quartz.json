@@ -1,0 +1,15 @@
+{
+    "name": "石英碎片",
+    "icon": "contenttweaker:quartz_shard",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "手持其右键地狱岩，将其变成$(4)下界石英矿石$()"
+        },
+        {
+            "type": "text",
+            "text": "2块的量的熔融玻璃（冶炼炉烧沙子或玻璃获得）浇筑碎片铸模（目前只能用金质，不能用粘土的）获得石英碎片。"
+        }
+    ]
+}

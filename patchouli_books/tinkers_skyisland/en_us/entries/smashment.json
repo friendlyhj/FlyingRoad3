@@ -1,0 +1,15 @@
+{
+    "name": "粉碎",
+    "category": "traits",
+    "icon": "contenttweaker:smashment",
+    "pages": [
+        {
+            "type": "text",
+            "text": "将$(l:smashment_item)粉碎强化大板$(/l)给匠魂工具强化，工具将有此属性。使用10个粉碎强化大板可将探矿属性升至II级"
+        },
+        {
+            "type": "text",
+            "text": "有此属性的工具就像无中生有的锤子一样。破坏圆石得沙砾，破坏沙砾得沙子。II级可以用压缩圆石和压缩沙砾。"
+        }
+    ]
+}

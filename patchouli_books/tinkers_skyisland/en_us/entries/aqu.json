@@ -1,0 +1,15 @@
+{
+    "name": "海蓝宝石",
+    "icon": "contenttweaker:aquamarine",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "用于制作$(l:cobalt_aqu)钴强化海蓝宝石$(/l)"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:aquamarine"
+        }
+    ]
+}

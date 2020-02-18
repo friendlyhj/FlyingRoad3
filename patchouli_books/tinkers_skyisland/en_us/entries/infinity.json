@@ -1,0 +1,23 @@
+{
+    "name": "无限",
+    "icon": "mekanism:basicblock:2",
+    "category": "traits",
+    "pages": [
+        {
+            "type": "text",
+            "text": "无限属性允许你消耗较少的强化槽获得不毁"
+        },
+        {
+            "type": "text",
+            "text": "使用10个mek的$(c)强化黑曜石$()，达到无限II即可达到不毁。"
+        },
+        {
+            "type": "text",
+            "text": "但是无限II的工具扔到EIO种植站还会掉耐久。可以在18/18无限II上再次升级到无限III。$(br)见右页的合成，屏障处为占位符，鼠标悬停查看详细信息。"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:show_infinity_three"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "柔软",
+    "category": "traits",
+    "icon": "contenttweaker:plant_matter",
+    "pages": [
+        {
+            "type": "text",
+            "text": "将$(l:plant_matter_material)自然物质$(/l)作为工具材料，工具将有此属性。"
+        },
+        {
+            "type": "text",
+            "text": "有此属性的工具将没有任何伤害。"
+        }
+    ]
+}

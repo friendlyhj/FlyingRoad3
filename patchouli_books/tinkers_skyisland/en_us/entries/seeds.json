@@ -1,0 +1,11 @@
+{
+    "name": "小麦种子",
+    "icon": "minecraft:wheat_seeds",
+    "category": "items",
+    "pages": [
+        {
+            "type": "text",
+            "text": "$(l:vibrant)点我跳转$(/l)"
+        }
+    ]
+}

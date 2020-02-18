@@ -1,0 +1,16 @@
+{
+    "name": "自然物质",
+    "icon": "contenttweaker:plant_matter",
+    "category": "items",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "contenttweaker:plant_matter",
+            "text": "这个自然物质不是空岛资源的，它仅仅作为材料，不能当作骨粉使用。$(br)可用作匠魂材料，$(l:plant_matter_material)点此跳转。$(/l)"
+        },
+        {
+            "type": "crafting",
+            "recipe": "crafttweaker:plant_matter"
+        }
+    ]
+}

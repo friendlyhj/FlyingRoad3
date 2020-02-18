@@ -1,0 +1,12 @@
+{
+    "name": "配给口粮",
+    "icon": "tinkerskyblock:rations",
+    "category": "tools",
+    "pages": [
+        {
+            "type": "spotlight",
+            "item": "tinkerskyblock:rations",
+            "text": "这个食物只能把你的饱食度恢复至差2个鸡腿，可以在工具组装台上用任意食物恢复。"
+        }
+    ]
+}

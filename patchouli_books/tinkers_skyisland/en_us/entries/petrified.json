@@ -1,0 +1,15 @@
+{
+    "name": "石化",
+    "category": "traits",
+    "icon": "contenttweaker:gunpower_in_bone",
+    "pages": [
+        {
+            "type": "text",
+            "text": "将$(l:petrified_item)火药浸渍骨头$(/l)给匠魂工具强化，工具将有此属性。"
+        },
+        {
+            "type": "text",
+            "text": "有此属性的工具破坏骨块，将会掉落6个$(4)圆石$()，60%几率掉落$(4)煤炭$()"
+        }
+    ]
+}
