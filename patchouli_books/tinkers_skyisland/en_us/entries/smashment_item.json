@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "text",
-            "text": "给匠魂工具强化，可使其增加$(l:smashment)探矿$(/l)强化"
+            "text": "给匠魂工具强化，可使其增加$(l:smashment)粉碎$(/l)强化"
         },
         {
             "type": "crafting",
