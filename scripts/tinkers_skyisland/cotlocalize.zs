@@ -1,4 +1,4 @@
-#loader crafttweaker
+#loader contenttweaker
 #priority 258
 function local(key as string, value as string) {
     game.setLocalization("zh_cn", key, value);
