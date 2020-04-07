@@ -12,7 +12,11 @@ import crafttweaker.item.WeightedItemStack;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.item.IIngredient;
 import crafttweaker.player.IPlayer;
+import mods.tconstruct.traits.CanApplyTogetherEnchantment;
 
+val cantApplySilkTouch as CanApplyTogetherEnchantment = function(trait, enchantment) {
+    return enchantment != <enchantment:minecraft:silk_touch>;
+};
 
 val moist = mods.contenttweaker.tconstruct.TraitBuilder.create("moist");
 moist.color = 0xFF00FF;
@@ -26,6 +30,7 @@ moist.onBlockHarvestDrops = function(trait, tool, event) {
         event.drops = [<item:minecraft:prismarine_shard> % 100,<item:minecraft:prismarine_crystals> % 50];
     }
 };
+moist.canApplyTogetherEnchantment = cantApplySilkTouch;
 moist.register();
 
 
@@ -45,9 +50,9 @@ vibrant.localizedName = ("生机");
 vibrant.localizedDescription = ("§o活跃的生命力！§r\n§f使用工具时有几率掉落种子。");
 vibrant.onBlockHarvestDrops = function(trait, tool, event) {
     var seed as double = Math.random();
-    if (!(seed >= 0.00500000000001)) {
+    if (seed < 0.005) {
         event.drops += <item:minecraft:melon_seeds> % 100;
-    } else if (!(seed >= 0.01000000000001)) {
+    } else if (seed < 0.01) {
         event.drops += <item:minecraft:pumpkin_seeds> % 100;
     } else if (seed >= 0.95){
         event.drops += <item:minecraft:wheat_seeds> % 100;
@@ -57,6 +62,8 @@ vibrant.onBlockHarvestDrops = function(trait, tool, event) {
         event.drops += <item:minecraft:reeds> % 100;
     } else if (seed >= 0.9){
         event.drops += <item:contenttweaker:grass_seed> % 100;
+    } else if (seed >= 0.897){
+        event.drops += <item:minecraft:dye:3> % 100;
     }
 };
 vibrant.register();
@@ -72,6 +79,7 @@ petrified.onBlockHarvestDrops = function(trait,tool,event){
         event.drops = [<item:minecraft:cobblestone> * 6 % 100,<item:minecraft:coal:0> % 60];
     }
 };
+petrified.canApplyTogetherEnchantment = cantApplySilkTouch;
 petrified.register();
 
 val smashment = mods.contenttweaker.tconstruct.TraitBuilder.create("smashment");
@@ -92,6 +100,7 @@ smashment.onBlockHarvestDrops = function(trait,tool,event){
         else if (<ore:compressed1xGravel> has dropping) {event.drops = [<item:minecraft:sand> * 9 % 100];}
     }
 };
+smashment.canApplyTogetherEnchantment = cantApplySilkTouch;
 smashment.register();
 
 val prospector = mods.contenttweaker.tconstruct.TraitBuilder.create("prospector");
@@ -104,6 +113,7 @@ prospector.localizedDescription = ("§o地质学家§r\n§f破坏沙砾或地狱
 prospector.canApplyTogetherTrait = function(TraitRepresentation, otherTrait){
     return otherTrait != "smashment";
 };
+prospector.canApplyTogetherEnchantment = cantApplySilkTouch;
 prospector.extraInfo = function(thisTrait, item, tag){
     var info as string[] = ["破坏沙砾或地狱岩时，获得："];
     for key,value in scripts.tinkers_skyisland.config.oreList{
@@ -114,7 +124,7 @@ prospector.extraInfo = function(thisTrait, item, tag){
 prospector.onBlockHarvestDrops = function(trait,tool,event){
     // BEGIN FORTUNE SUPPORT. HAS SOME PROBLEM?
     val tab as float[] = [1.0, 1.1, 1.3, 1.5];
-    val lib as int[][string] = scripts.tinkers_skyisland.config.oreList;
+    var lib as int[][string] = scripts.tinkers_skyisland.config.oreList;
     for key,value in lib {
         lib[key][1] = value[1] * tab[event.fortuneLevel];
     }
@@ -197,6 +207,7 @@ lapidary.localizedDescription = ("§o闪闪发亮……§r\n§f破坏石头时�
 lapidary.canApplyTogetherTrait = function(TraitRepresentation, otherTrait){
     return otherTrait != "prospector";
 };
+lapidary.canApplyTogetherEnchantment = cantApplySilkTouch;
 lapidary.extraInfo = function(thisTrait, item, tag){
     var info as string[] = ["破坏石头后获得："];
     for key,value in scripts.tinkers_skyisland.config.gemList{
@@ -259,10 +270,9 @@ inf.addItem(<item:mekanism:basicblock:2>);
 inf.maxLevel = 2;
 inf.countPerLevel = 9;
 inf.localizedName = "无限";
-inf.localizedDescription = "§o洪荒之力！§r\n§f达到二级后你的工具将不消耗耐久。\n与EIO种植站不兼容\n18/18无限II工具在工作台另加6个强化黑曜石和2个下界之星可把工具升级为无法破坏。";
+inf.localizedDescription = "§o洪荒之力！§r\n§f一级时，工具有30%几率不消耗耐久，达到二级后你的工具永远不消耗耐久。\n与EIO种植站不兼容\n18/18无限II工具在工作台另加6个强化黑曜石和2个下界之星可把工具升级为无法破坏。";
 inf.onToolDamage = function(trait, tool, unmodifiedAmount, newAmount, holder) {
-    if (trait.getData(tool).level == 2) {return 0;}
-    else return newAmount;
+    return (trait.getData(tool).level == 2 || Math.random() < 0.3) ? 0 : newAmount;
 };
 inf.canApplyTogetherTrait = function(TraitRepresentation, otherTrait) {
     return otherTrait != "brittle";
@@ -283,8 +293,8 @@ plantMatter.addMaterialTrait(<ticontrait:soft>,"extra");
 plantMatter.addMaterialTrait(<ticontrait:moist>,"head");
 plantMatter.addMaterialTrait(<ticontrait:vibrant>,"extra");
 plantMatter.addMaterialTrait("ecological","handle");
-plantMatter.itemLocalizer = function(thisMaterial,itemName){return "自然物质 " + itemName;};
-plantMatter.localizedName = "自然物质";
+plantMatter.itemLocalizer = function(thisMaterial,itemName){return game.localize("item.contenttweaker.plant_matter.name") ~ " " ~ itemName;};
+plantMatter.localizedName = game.localize("item.contenttweaker.plant_matter.name");
 plantMatter.register();
 
 val aqr = mods.contenttweaker.tconstruct.MaterialBuilder.create("aquamarinec");
@@ -299,8 +309,8 @@ aqr.addMaterialTrait(<ticontrait:lapidary_calibration>,"head");
 aqr.addMaterialTrait(<ticontrait:lapidary_calibration>,"extra");
 aqr.addMaterialTrait("lightweight","handle");
 aqr.addMaterialTrait("aquadynamic","handle");
-aqr.itemLocalizer = function(thisMaterial,itemName){return "钴强化海蓝宝石 " + itemName;};
-aqr.localizedName = "钴强化海蓝宝石";
+aqr.itemLocalizer = function(thisMaterial,itemName){return game.localize("item.contenttweaker.aquamarinec.name") ~ " " ~ itemName;};
+aqr.localizedName = game.localize("item.contenttweaker.aquamarinec.name");
 aqr.register();
 
 val gild = mods.contenttweaker.tconstruct.MaterialBuilder.create("gildediron");
@@ -315,6 +325,6 @@ gild.addExtraMaterialStats(40);
 gild.addMaterialTrait(<ticontrait:soul>,"head");
 gild.addMaterialTrait("magnetic1","extra");
 gild.addMaterialTrait("magnetic1","handle");
-gild.itemLocalizer = function(thisMaterial,itemName){return "黑曜石金 " + itemName;};
-gild.localizedName = "黑曜石金";
+gild.itemLocalizer = function(thisMaterial,itemName){return game.localize("item.contenttweaker.gildediron.name") ~ " " ~ itemName;};
+gild.localizedName = game.localize("item.contenttweaker.gildediron.name");
 gild.register();

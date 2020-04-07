@@ -15,12 +15,12 @@
             <if>
                 <var>slimes</var>
                 <str> ($aSlime$f)</str>
-                <str> </str>
+                <str></str>
             </if>
         </line>
-		<line>
-			<str>坐标: ({x}, {y}, {z})</str>
-		</line>
+        <line>
+            <str>坐标: ({x}, {y}, {z})</str>
+        </line>
         <line>
             <str>亮度: </str>
             <max>
@@ -73,20 +73,20 @@
         <line>
             <str>实体: $e{entitiesrendered}$f / $e{entitiestotal}$f</str>
         </line>
-		<line>
-			<str>即将</str>
-			<if>
-				<var>raining</var>
-				<str>放晴:</str>
-				<str>下雨:</str>
-			</if>
-			<str> $e{nextweatherchange}$f</str>
-		</line>
+        <line>
+            <str>即将</str>
+            <if>
+                <var>raining</var>
+                <str>放晴:</str>
+                <str>下雨:</str>
+            </if>
+            <str> $e{nextweatherchange}$f</str>
+        </line>
     </lines>
     <lines at="bottomleft">
         <line>
             <var>mainhandicon</var>
-            <str> </str>
+            <str></str>
             <operation>
                 <str>ge</str>
                 <pct>
@@ -112,7 +112,7 @@
         </line>
         <line>
             <var>offhandicon</var>
-            <str> </str>
+            <str></str>
             <operation>
                 <str>ge</str>
                 <pct>
@@ -137,7 +137,7 @@
             </max>
         </line>
         <line>
-            <str> </str>
+            <str></str>
         </line>
     </lines>
     <lines at="topright">
@@ -225,7 +225,7 @@
             </max>
         </line>
         <line>
-            <str> </str>
+            <str></str>
         </line>
         <line>
             <operation>
@@ -248,7 +248,7 @@
                 <str>{helmetdamageleft}$f / $e{helmetmaxdamage}</str>
                 <str/>
             </max>
-            <str> </str>
+            <str></str>
             <var>helmeticon</var>
         </line>
         <line>
@@ -272,7 +272,7 @@
                 <str>{chestplatedamageleft}$f / $e{chestplatemaxdamage}</str>
                 <str/>
             </max>
-            <str> </str>
+            <str></str>
             <var>chestplateicon</var>
         </line>
         <line>
@@ -296,7 +296,7 @@
                 <str>{leggingsdamageleft}$f / $e{leggingsmaxdamage}</str>
                 <str/>
             </max>
-            <str> </str>
+            <str></str>
             <var>leggingsicon</var>
         </line>
         <line>
@@ -320,7 +320,7 @@
                 <str>{bootsdamageleft}$f / $e{bootsmaxdamage}</str>
                 <str/>
             </max>
-            <str> </str>
+            <str></str>
             <var>bootsicon</var>
         </line>
     </lines>

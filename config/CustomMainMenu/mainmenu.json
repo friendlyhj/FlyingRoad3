@@ -121,8 +121,8 @@
 			"color": -1,
 			"alignment": "bottom_left"
 		},
-		"versionmodpack":{
-			"text":"飞翔之路V3.2.1-Fix2",
+		"versionModpack":{
+			"text":"飞翔之路V3.3.4-Fix2",
 			"posX": 2,
 			"posY": -10,
 			"color" : -1,

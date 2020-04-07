@@ -1,0 +1,15 @@
+//Not Used
+
+setSpawnStructure("air", 64)
+addBiomes("minecraft:plains")
+
+//Creates a new LayerGenerator and saves it as a variable
+layers = new LayerGenerator()
+
+//Adds bedrock in whole world
+layers.addLayer(0~255, <minecraft:bedrock>)
+
+//Adds the layer generator to the dimension
+addGenerator(layers)
+
+disableNetherPortal()

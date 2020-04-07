@@ -1,37 +1,36 @@
 [
-	{
-		"mode": "ADD",
-		"result": "draconicevolution:energy_storage_core",
-		"catalyst": "draconicevolution:draconium_block",
-		"energy": 455000,
-		"tier": 1,
-		"ingredients": [
-			"actuallyadditions:block_crystal_empowered",
-			"actuallyadditions:block_crystal_empowered",
-			"draconicevolution:wyvern_energy_core",
-			"draconicevolution:wyvern_core",
-			"draconicevolution:wyvern_energy_core",
-			"enderio:item_basic_capacitor,1,2",
-			"actuallyadditions:block_crystal_empowered",
-			"actuallyadditions:block_crystal_empowered"
-		]
-	},
-	{
-		"mode": "ADD",
-		"result": "draconicevolution:energy_pylon",
-		"catalyst": "thermalfoundation:storage,4,8",
-		"energy": 160000,
-		"tier": 1,
-		"ingredients": [
-			"actuallyadditions:block_laser_relay_extreme",
-			"actuallyadditions:block_laser_relay_extreme",
-			"draconicevolution:wyvern_core",
-			"ore:gearEnderium",
-			"draconicevolution:particle_generator",
-			"ore:gearEnderium",
-			"actuallyadditions:block_laser_relay_extreme",
-			"actuallyadditions:block_laser_relay_extreme"
-		]
-	}
+    {
+        "mode": "ADD",
+        "result": "draconicevolution:energy_storage_core",
+        "catalyst": "draconicevolution:draconium_block",
+        "energy": 455000,
+        "tier": 1,
+        "ingredients": [
+            "actuallyadditions:block_crystal_empowered",
+            "actuallyadditions:block_crystal_empowered",
+            "draconicevolution:wyvern_energy_core",
+            "draconicevolution:wyvern_core",
+            "draconicevolution:wyvern_energy_core",
+            "enderio:item_basic_capacitor,1,2",
+            "actuallyadditions:block_crystal_empowered",
+            "actuallyadditions:block_crystal_empowered"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "draconicevolution:energy_pylon",
+        "catalyst": "thermalfoundation:storage,4,8",
+        "energy": 160000,
+        "tier": 1,
+        "ingredients": [
+            "actuallyadditions:block_laser_relay_extreme",
+            "actuallyadditions:block_laser_relay_extreme",
+            "draconicevolution:wyvern_core",
+            "ore:gearEnderium",
+            "draconicevolution:particle_generator",
+            "ore:gearEnderium",
+            "actuallyadditions:block_laser_relay_extreme",
+            "actuallyadditions:block_laser_relay_extreme"
+        ]
+    }
 ]
-		

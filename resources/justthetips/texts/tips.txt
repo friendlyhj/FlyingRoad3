@@ -2,7 +2,7 @@
 向量板大法好
 使用/forge tps或/cofh tps查看当前世界TPS，正常为20
 使用/bq_admin default load加载任务（For OP）
-使用/bq_admin complete @p 任务ID 强制完成某一任务（For OP）
+使用/bq_admin complete 任务ID 强制完成某一任务（For OP）
 若某种液体/气体无桶装形式，可用装有其的任意容器进行过滤标记
 使用气体升级降低mek机器气体消耗量
 纸箱为方便又imba的移动方块的工具
