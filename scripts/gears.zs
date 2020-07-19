@@ -33,7 +33,7 @@ function rodSupplier(ore as IOreDictEntry) as IIngredient {
     var ticRod as IItemStack = <tconstruct:tool_rod>.withTag({Material : snakeKey});
     if (rodOre.empty) {
         return ticRod;
-    } else if (snakeKey.contains("alum") || snakeKey.contains("tin") || snakeKey.contains("gold")) {
+    } else if (snakeKey.contains("alum") || snakeKey == "tin" || snakeKey == "gold") {
         return rodOre;
     } else return ticRod.or(rodOre);
 }
